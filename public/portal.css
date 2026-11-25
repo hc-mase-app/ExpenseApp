@@ -1,0 +1,687 @@
+
+#abt-medical-demo{--bg:light-dark(#f5f8f6,#15201b);--panel:light-dark(#fff,#1b2a23);--ink:light-dark(#17362a,#ecf5ef);--muted:light-dark(#577064,#adc2b4);--line:light-dark(#dce7df,#395045);--brand:light-dark(#007f43,#71d49e);--onbrand:light-dark(#fff,#102d1d);--soft:light-dark(#e7f4ec,#244235);--warn:light-dark(#7d5010,#ffcf83);--bad:light-dark(#a13636,#ffaaaa);font:14px/1.55 'Segoe UI',Arial,sans-serif;color:var(--ink);background:var(--bg);border-radius:16px;overflow:hidden;color-scheme:light dark}
+#abt-medical-demo *{box-sizing:border-box}#abt-medical-demo [hidden]{display:none!important}#abt-medical-demo h2,#abt-medical-demo h3,#abt-medical-demo p{margin:0}#abt-medical-demo button,#abt-medical-demo input,#abt-medical-demo select,#abt-medical-demo textarea{font:inherit;color:inherit}#abt-medical-demo button{cursor:pointer}#abt-medical-demo button:disabled{opacity:.45;cursor:default}#abt-medical-demo button:focus-visible,#abt-medical-demo input:focus-visible,#abt-medical-demo select:focus-visible,#abt-medical-demo textarea:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+#abt-medical-demo .top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:22px 26px;background:var(--panel);border-bottom:1px solid var(--line)}#abt-medical-demo .brand{display:flex;align-items:center;gap:12px}#abt-medical-demo .mark{background:var(--brand);color:var(--onbrand);border-radius:10px;padding:8px 12px;font-weight:700;letter-spacing:1px}#abt-medical-demo .brand strong{display:block;font-size:17px}#abt-medical-demo .muted{color:var(--muted)}#abt-medical-demo .small{font-size:12px}#abt-medical-demo .roles{display:flex;gap:6px;flex-wrap:wrap}#abt-medical-demo .roles button[aria-pressed=true]{background:var(--brand);color:var(--onbrand);border-color:var(--brand)}
+#abt-medical-demo button{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:8px 13px;min-height:38px;font-weight:500}#abt-medical-demo button.primary{background:var(--brand);color:var(--onbrand);border-color:var(--brand)}#abt-medical-demo button.quiet{background:transparent;border-color:transparent;color:var(--muted)}#abt-medical-demo button.danger{color:var(--bad)}#abt-medical-demo .body{padding:24px 26px;display:grid;gap:20px}#abt-medical-demo .intro,#abt-medical-demo .row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}#abt-medical-demo h2{font-size:24px;font-weight:650;letter-spacing:-.6px}#abt-medical-demo h3{font-size:16px;font-weight:600}#abt-medical-demo .eyebrow{font-size:11px;font-weight:650;letter-spacing:1.5px;color:var(--brand);text-transform:uppercase;margin-bottom:5px}
+#abt-medical-demo .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}#abt-medical-demo .metric{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:17px}#abt-medical-demo .metric.highlight{background:var(--soft);border-color:var(--brand)}#abt-medical-demo .amount{font-size:22px;font-weight:650;letter-spacing:-.5px;font-variant-numeric:tabular-nums;margin-top:7px}#abt-medical-demo .metric span{display:block;color:var(--muted);font-size:12px}#abt-medical-demo .box{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;min-width:0}#abt-medical-demo .boxhead{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:16px}#abt-medical-demo .badge{font-size:11px;display:inline-block;padding:4px 9px;border-radius:20px;background:var(--soft);color:var(--brand);white-space:normal}#abt-medical-demo .badge.pending{color:var(--warn);background:light-dark(#fff3db,#493b27)}#abt-medical-demo .badge.returned{color:var(--bad);background:light-dark(#ffeded,#452e2e)}
+#abt-medical-demo .profile{display:flex;gap:22px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;margin-top:15px}#abt-medical-demo .profile b{display:block;font-weight:500}#abt-medical-demo .scroll{overflow-x:auto}#abt-medical-demo table{border-collapse:collapse;width:100%;font-size:13px}#abt-medical-demo th{text-align:left;font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.4px}#abt-medical-demo td,#abt-medical-demo th{padding:12px 8px;border-bottom:1px solid var(--line);vertical-align:middle}#abt-medical-demo td:first-child,#abt-medical-demo th:first-child{padding-left:0}#abt-medical-demo .money{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}#abt-medical-demo td strong{display:block;font-weight:600}#abt-medical-demo .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}#abt-medical-demo input,#abt-medical-demo select,#abt-medical-demo textarea{border:1px solid var(--line);background:var(--panel);border-radius:7px;padding:9px 11px;width:100%;min-width:0}#abt-medical-demo .toolbar input{flex:1;min-width:160px}#abt-medical-demo .toolbar select{width:auto;max-width:100%}#abt-medical-demo label{display:block;font-size:12px;color:var(--muted)}#abt-medical-demo label input,#abt-medical-demo label select,#abt-medical-demo label textarea{margin-top:5px;font-size:14px;color:var(--ink)}#abt-medical-demo .formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}#abt-medical-demo .fieldfull{grid-column:1/-1}#abt-medical-demo .item{display:grid;grid-template-columns:1fr 155px 38px;gap:8px;margin-top:8px}#abt-medical-demo .item button{padding:5px}#abt-medical-demo .help{margin-top:7px;font-size:12px;color:var(--muted)}#abt-medical-demo .actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:17px}#abt-medical-demo .banner{background:var(--soft);padding:12px 15px;border-radius:8px;color:var(--ink);font-size:13px}#abt-medical-demo .error{color:var(--bad);margin-top:10px}#abt-medical-demo .detailgrid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:18px}#abt-medical-demo .facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px}#abt-medical-demo .facts span{display:block;font-size:12px;color:var(--muted)}#abt-medical-demo .facts b{font-weight:500}#abt-medical-demo .splitline{border-top:1px solid var(--line);margin:16px 0}#abt-medical-demo .docs{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}#abt-medical-demo .review{background:var(--bg);border-radius:8px;padding:16px;display:grid;gap:12px}#abt-medical-demo .review label{color:var(--ink)}#abt-medical-demo .check{display:flex;gap:8px;align-items:flex-start;font-size:12px}#abt-medical-demo .check input{width:16px;flex:none;margin:3px 0}#abt-medical-demo .notice{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding:13px 26px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}#abt-medical-demo .note{font-size:13px;padding-top:8px;color:var(--muted)}#abt-medical-demo .step{display:flex;flex-wrap:wrap;gap:6px;color:var(--muted);font-size:12px;margin-bottom:15px}#abt-medical-demo .step .active{color:var(--brand);font-weight:600}#abt-medical-demo .receipt{padding:14px;background:var(--bg);border:1px dashed var(--line);border-radius:8px;margin:10px 0}#abt-medical-demo .empty{padding:25px 0;text-align:center;color:var(--muted)}
+@media(max-width:760px){#abt-medical-demo .metrics{grid-template-columns:repeat(2,minmax(0,1fr))}#abt-medical-demo .detailgrid{grid-template-columns:1fr}#abt-medical-demo .amount{font-size:20px}#abt-medical-demo .body{padding:18px}#abt-medical-demo .top{padding:18px}#abt-medical-demo .box{padding:15px}}
+@media(max-width:420px){#abt-medical-demo .formgrid{grid-template-columns:1fr}#abt-medical-demo .item{grid-template-columns:1fr 95px 34px}#abt-medical-demo .metric{padding:12px}#abt-medical-demo .amount{font-size:17px}#abt-medical-demo .brand strong{font-size:15px}#abt-medical-demo h2{font-size:21px}#abt-medical-demo .facts{grid-template-columns:1fr}#abt-medical-demo input,#abt-medical-demo select,#abt-medical-demo textarea{font-size:16px}}
+
+html{color-scheme:light}body{margin:0;background:#f5f8f6}#abt-medical-demo{border-radius:0;min-height:100vh;max-width:1440px;margin:auto}#abt-medical-demo .login{max-width:500px;margin:50px auto;display:grid;gap:16px;padding:28px}#abt-medical-demo .module-nav{display:flex;gap:8px;flex-wrap:wrap}#abt-medical-demo .module-nav button.selected{background:var(--soft);color:var(--brand);border-color:var(--brand)}#abt-medical-demo a{color:var(--brand);text-underline-offset:3px}#abt-medical-demo .history-table{min-width:850px}#abt-medical-demo .metric .amount{overflow-wrap:anywhere}#abt-medical-demo .error:empty{display:none}
+#abt-medical-demo .app-dialog{position:fixed;inset:0;margin:auto;width:min(1080px,calc(100vw - 40px));max-width:none;max-height:calc(100dvh - 48px);padding:0;border:1px solid var(--line);border-radius:16px;background:var(--panel);color:var(--ink);overflow:auto;overscroll-behavior:contain;box-shadow:0 20px 80px #0004}
+#abt-medical-demo .app-dialog::backdrop{background:#10271db0}
+#abt-medical-demo .app-dialog #claim-detail{border:0;border-radius:0;padding:0 24px 24px}
+#abt-medical-demo .app-dialog #claim-detail>.boxhead{position:sticky;top:0;z-index:1;background:var(--panel);padding:18px 0;margin-bottom:16px;border-bottom:1px solid var(--line)}
+@media(max-width:600px){#abt-medical-demo .app-dialog{width:calc(100vw - 16px);max-height:calc(100dvh - 24px);border-radius:12px}#abt-medical-demo .app-dialog #claim-detail{padding:0 16px 20px}#abt-medical-demo .app-dialog #close-detail{min-height:44px}}
+
+@keyframes abt-backdrop-in{from{background-color:#10271d00}to{background-color:#10271db0}}
+@keyframes abt-backdrop-out{from{background-color:#10271db0}to{background-color:#10271d00}}
+#abt-medical-demo .app-dialog[data-motion=enter]::backdrop{animation:abt-backdrop-in 240ms ease-out}
+#abt-medical-demo .app-dialog[data-motion=exit]::backdrop{animation:abt-backdrop-out 180ms ease-in forwards}
+@media(prefers-reduced-motion:reduce){#abt-medical-demo .app-dialog::backdrop{animation:none!important}}
+
+#abt-medical-demo .sop-table{width:100%;border-collapse:collapse;margin:12px 0}
+#abt-medical-demo .sop-table thead th{background:var(--brand);color:var(--onbrand);text-align:center;text-transform:none;font-size:14px;letter-spacing:0;padding:10px}
+#abt-medical-demo .sop-table tbody th{width:37%;color:var(--ink);font-weight:600;text-transform:none;letter-spacing:0;font-size:13px;background:var(--bg)}
+#abt-medical-demo .sop-table td,#abt-medical-demo .sop-table tbody th{border:1px solid var(--line);padding:7px 10px;overflow-wrap:anywhere}
+#abt-medical-demo .sop-table label{color:var(--ink);font-size:13px;font-weight:600}
+#abt-medical-demo .sop-table input,#abt-medical-demo .sop-table select{margin:0}
+#abt-medical-demo .sop-ready{padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:10px;margin-top:18px}
+#abt-medical-demo #payment-request-preview{scroll-margin-top:90px}
+#abt-medical-demo #payment-request-section{scroll-margin-top:90px}
+@media(max-width:500px){#abt-medical-demo .sop-table tbody th{width:43%}#abt-medical-demo .sop-table td,#abt-medical-demo .sop-table tbody th{padding:6px}}
+
+#abt-medical-demo .app-dialog #claim-form-section{border:0;border-radius:0;padding:0 24px 24px}
+#abt-medical-demo .app-dialog #claim-form-section>.boxhead{position:sticky;top:0;z-index:1;background:var(--panel);padding:18px 0;margin-bottom:16px;border-bottom:1px solid var(--line)}
+@media(max-width:600px){#abt-medical-demo .app-dialog #claim-form-section{padding:0 16px 20px}#abt-medical-demo .app-dialog #close-form{min-height:44px}}
+
+#abt-medical-demo #claim-balance-panel{margin:0 0 22px}
+#abt-medical-demo .claim-balance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+#abt-medical-demo .claim-balance-grid .amount{font-size:21px}
+#abt-medical-demo #claim-balance-panel .metric span{line-height:1.5}
+@media(max-width:600px){#abt-medical-demo .claim-balance-grid{grid-template-columns:1fr;gap:8px}#abt-medical-demo .claim-balance-grid .metric{padding:12px}#abt-medical-demo .claim-balance-grid .amount{font-size:20px;margin-top:3px}}
+
+.history-downloads{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}.download-link{display:inline-block;border:1px solid #c9ded2;border-radius:8px;padding:9px 12px;color:#006b38;background:#fff;font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap}.download-link:hover{background:#e7f4ec}.download-link:focus-visible{outline:3px solid #00863e;outline-offset:2px}
+
+#abt-medical-demo .app-dialog.submission-dialog{width:min(650px,calc(100vw - 32px))}
+#abt-medical-demo .submission-success{padding:36px;text-align:center}
+#abt-medical-demo .submission-success-icon{display:grid;place-items:center;width:66px;height:66px;margin:0 auto 20px;background:#e7f4ec;color:#007a3d;border-radius:50%;font-size:38px;font-weight:700}
+#abt-medical-demo .submission-success h2{font-size:28px;line-height:1.25;margin:12px 0}
+#abt-medical-demo .submission-number{overflow-wrap:anywhere;margin:16px 0 24px}
+#abt-medical-demo .submission-reminder{background:#fff7dc;border:1px solid #e5c869;border-left:5px solid #b68b16;border-radius:12px;padding:22px;text-align:left;margin-bottom:20px}
+#abt-medical-demo .submission-reminder h3{font-size:22px;color:#604800;margin:0 0 12px;line-height:1.3}
+#abt-medical-demo .submission-reminder p{font-size:17px;line-height:1.65;margin:0;color:#3d351f}
+#abt-medical-demo .submission-success>.primary{width:100%;min-height:48px;margin-top:10px;white-space:normal}
+@media(max-width:600px){#abt-medical-demo .submission-success{padding:24px 18px}#abt-medical-demo .submission-success h2{font-size:24px}#abt-medical-demo .submission-reminder{padding:18px}#abt-medical-demo .submission-reminder h3{font-size:20px}#abt-medical-demo .submission-reminder p{font-size:16px}}
+
+#abt-medical-demo #hr-acting-select{width:230px;max-width:100%;font-size:12px}
+#abt-medical-demo .employee-editor{border:0;margin:0;padding:0 24px 24px}
+#abt-medical-demo .employee-editor>.boxhead{position:sticky;top:0;background:var(--panel);padding:18px 0;z-index:1;border-bottom:1px solid var(--line)}
+#abt-medical-demo #temporary-password{font-size:23px;letter-spacing:2px}
+@media(max-width:600px){#abt-medical-demo #hr-acting-select{width:100%}#abt-medical-demo .employee-editor{padding:0 16px 20px}}
+
+#abt-medical-demo .master-tabs{display:flex;flex-wrap:wrap;gap:8px}#abt-medical-demo .app-dialog.master-dialog{width:min(700px,calc(100vw - 24px))}
+
+#abt-medical-demo .criteria-fields{border:0;margin:0;padding:0;min-width:0}#abt-medical-demo .criteria-fields h3{margin:24px 0 12px}#abt-medical-demo .criteria-fields:disabled{opacity:1}
+
+/* Color hierarchy: presentation only; geometry and interactions stay unchanged. */
+#abt-medical-demo{--bg:light-dark(#f3f5f8,#14191f);--panel:light-dark(#ffffff,#1e2731);--ink:light-dark(#1c2b3a,#edf3f8);--muted:light-dark(#526477,#b7c5d4);--line:light-dark(#d6dfe9,#3b4a5b);--brand:light-dark(#007744,#74d6a4);--onbrand:light-dark(#ffffff,#102d20);--soft:light-dark(#e7f5ed,#234135);--warn:light-dark(#7a4900,#ffcf83);--bad:light-dark(#a12b39,#ffadb5);--blue:light-dark(#17558c,#9aceff);--blue-soft:light-dark(#eaf3ff,#20364d);--amber-soft:light-dark(#fff3d6,#423523);--neutral-soft:light-dark(#eef2f6,#293440);--green-line:light-dark(#64a984,#519d77)}
+#abt-medical-demo .top{background:light-dark(#ffffff,#1b222b)}
+#abt-medical-demo .metric{background:light-dark(#ffffff,#222c37)}
+#abt-medical-demo .metric.tone-limit{background:var(--blue-soft);border-color:light-dark(#abc9e6,#4a6c8c)}
+#abt-medical-demo .metric.tone-limit .amount{color:var(--blue)}
+#abt-medical-demo .metric.tone-used,#abt-medical-demo .metric.tone-total{background:var(--neutral-soft)}
+#abt-medical-demo .metric.tone-pending{background:var(--amber-soft);border-color:light-dark(#ddbd7b,#8c7042)}
+#abt-medical-demo .metric.tone-pending .amount{color:var(--warn)}
+#abt-medical-demo .metric.highlight,#abt-medical-demo .metric.tone-available,#abt-medical-demo .metric.tone-paid{background:var(--soft);border-color:var(--green-line)}
+#abt-medical-demo .metric.highlight .amount,#abt-medical-demo .metric.tone-available .amount,#abt-medical-demo .metric.tone-paid .amount{color:var(--brand)}
+#abt-medical-demo .metric.tone-review{background:var(--blue-soft);border-color:light-dark(#abc9e6,#4a6c8c)}
+#abt-medical-demo .metric.tone-review .amount{color:var(--blue)}
+#abt-medical-demo .box:has(>.profile){background:light-dark(#f9fbfd,#202b36)}
+#abt-medical-demo table thead th{background:light-dark(#eaf0f6,#2b3847);color:light-dark(#40566d,#c8d7e8)}
+#abt-medical-demo table tbody tr:nth-child(even){background:light-dark(#f5f8fb,#222e3a)}
+#abt-medical-demo table tbody tr:hover{background:light-dark(#eaf3fc,#2b3c4e)}
+#abt-medical-demo .badge.status-historical{background:var(--neutral-soft);color:light-dark(#526477,#c4d0dc)}
+#abt-medical-demo .badge.status-submitted{background:var(--blue-soft);color:var(--blue)}
+#abt-medical-demo .badge.status-approved,#abt-medical-demo .badge.status-returned{background:var(--amber-soft);color:var(--warn)}
+#abt-medical-demo .badge.status-paid{background:var(--soft);color:var(--brand)}
+#abt-medical-demo .badge.status-rejected{background:light-dark(#ffeaee,#492c35);color:var(--bad)}
+#abt-medical-demo .banner{background:var(--blue-soft);color:var(--ink)}
+#abt-medical-demo .review{background:light-dark(#edf2f7,#151e28)}
+#abt-medical-demo .download-link{color:var(--brand);background:var(--panel);border-color:var(--line)}
+#abt-medical-demo .download-link:hover{background:var(--soft)}
+#abt-medical-demo button:not(.primary):not(.quiet):hover{background:var(--neutral-soft)}
+#abt-medical-demo .sop-table thead th{background:var(--brand);color:var(--onbrand)}
+/* Distinct history surface; color-only refinement. */
+#abt-medical-demo .box:has(.history-table){background:light-dark(#f0faf5,#18332f);border-color:light-dark(#afd4c2,#3c6b60);box-shadow:inset 0 3px 0 light-dark(#409e75,#62c9a0)}
+#abt-medical-demo .box:has(.history-table) .boxhead h3{color:light-dark(#20533e,#d8f5e8)}
+#abt-medical-demo .history-table thead th{background:light-dark(#dcefe5,#245049);color:light-dark(#305944,#d0eee2);border-bottom-color:light-dark(#b7d8c8,#47786b)}
+#abt-medical-demo .history-table tbody tr{background:light-dark(#f5fcf8,#1b3934)}
+#abt-medical-demo .history-table tbody tr:nth-child(even){background:light-dark(#e8f5ee,#20413b)}
+#abt-medical-demo .history-table tbody tr:hover{background:light-dark(#d8eee2,#2b524a)}
+#abt-medical-demo .history-table td{border-bottom-color:light-dark(#c2ddcf,#3c6259)}
+#abt-medical-demo .box:has(.history-table) .download-link,#abt-medical-demo .history-table button{background:light-dark(#ffffff,#203e37);border-color:light-dark(#acd0bc,#4c7767)}
+#abt-medical-demo .box:has(.history-table) .download-link:hover,#abt-medical-demo .history-table button:hover{background:light-dark(#d8eee2,#31574a)}
+
+/* Full-width workspace; existing dialog widths are retained. */
+#abt-medical-demo{max-width:none;width:100%;margin:0}
+html,body{background:#14191f}
+
+#abt-medical-demo .badge.status-finance_unsent{background:var(--blue-soft);color:var(--blue)}
+#abt-medical-demo .badge.status-finance_sent{background:var(--amber-soft);color:var(--warn)}
+#abt-medical-demo .finance-dispatch button{margin-top:10px;white-space:normal}
+#abt-medical-demo .finance-dispatch p{margin-top:7px}
+
+#abt-medical-demo .date-control{display:block;position:relative;margin-top:5px}
+#abt-medical-demo .date-control input[type=date]{margin-top:0!important;color:transparent!important;caret-color:transparent}
+#abt-medical-demo .date-control input[type=date]::-webkit-datetime-edit{color:transparent}
+#abt-medical-demo .date-display{position:absolute;left:12px;right:36px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--ink);font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#abt-medical-demo .date-control:has(input:disabled) .date-display{color:var(--muted)}
+
+#abt-medical-demo .badge.status-cancelled{color:var(--bad);background:light-dark(#ffeaee,#492c35)}
+#abt-medical-demo .cancellation-panel p,#abt-medical-demo .cancellation-panel form{margin-top:10px}
+
+#abt-medical-demo .duplicate-warning{padding:18px;border:1px solid light-dark(#d1aa58,#967242);border-radius:10px;background:var(--amber-soft);color:var(--ink);margin:18px 0}
+#abt-medical-demo .duplicate-warning h3{color:var(--warn)}
+#abt-medical-demo .duplicate-warning p,#abt-medical-demo .duplicate-warning label{margin-top:10px}
+#abt-medical-demo .duplicate-list article{padding:14px 0;border-bottom:1px solid var(--line)}
+#abt-medical-demo .duplicate-preview{margin-top:12px;padding:12px;background:var(--panel);border-radius:8px;overflow-wrap:anywhere}
+#abt-medical-demo .duplicate-review{margin:16px 0}
+
+#abt-medical-demo .hr-tabs{gap:8px}
+#abt-medical-demo .hr-pagination{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+#abt-medical-demo .hr-pagination label{display:flex;align-items:center;gap:8px}
+#abt-medical-demo .hr-pagination select{width:75px;margin:0}
+#abt-medical-demo .hr-pagination .roles{align-items:center}
+
+#abt-medical-demo .badge.status-finance_resend{background:var(--amber-soft);color:var(--warn);box-shadow:inset 0 0 0 1px currentColor}
+
+#abt-medical-demo .quota-level-table{min-width:950px}
+#abt-medical-demo .quota-level-table th:first-child{min-width:155px}
+#abt-medical-demo .quota-level-table th{white-space:normal;vertical-align:top}
+#abt-medical-demo .quota-level-table td{vertical-align:middle}
+#abt-medical-demo .quota-level-table input{min-width:100px;margin:0;font-variant-numeric:tabular-nums}
+#abt-medical-demo .quota-level-table .small{display:block;margin-top:5px;font-weight:400}
+
+/* Claim detail: section tabs preserve unsaved form fields and attachment selections. */
+#abt-medical-demo [hidden]{display:none!important}
+#abt-medical-demo #claim-detail>.claim-header{display:block;padding:16px 0 0}
+#abt-medical-demo .claim-header-main{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+#abt-medical-demo .claim-header-main .actions{margin:0;justify-content:flex-end}
+#abt-medical-demo .claim-header-main .badge{max-width:260px}
+#abt-medical-demo .claim-detail-tabs{display:flex;gap:6px;margin-top:16px;overflow:auto;border-bottom:1px solid var(--line)}
+#abt-medical-demo .claim-detail-tabs button{white-space:nowrap;border:0;border-bottom:3px solid transparent;border-radius:7px 7px 0 0;background:transparent;color:var(--muted);padding:11px 14px}
+#abt-medical-demo .claim-detail-tabs button[aria-selected=true]{color:var(--brand);border-bottom-color:var(--brand);background:var(--soft);font-weight:600}
+#abt-medical-demo .claim-detail-tabs button:disabled{opacity:.5;cursor:not-allowed}
+#abt-medical-demo .claim-detail-panel>.banner{margin-bottom:14px}
+#abt-medical-demo .claim-review{align-self:start}
+#abt-medical-demo .claim-finance-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr);gap:20px;align-items:start}
+#abt-medical-demo .claim-finance-grid #payment-request-section{scroll-margin-top:145px}
+#abt-medical-demo .claim-finance-grid .splitline:first-child{display:none}
+#abt-medical-demo .claim-other-actions{border-top:1px solid var(--line);margin-top:22px;padding-top:16px}
+#abt-medical-demo .claim-other-actions>summary{font-weight:600;color:var(--muted);cursor:pointer;padding:5px 0}
+#abt-medical-demo .claim-documents{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+#abt-medical-demo .claim-documents>.boxhead{gap:12px;flex-wrap:wrap}
+#abt-medical-demo .attachment-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#abt-medical-demo .attachment-card{display:flex;align-items:center;gap:10px;background:var(--bg);padding:12px;border:1px solid var(--line);border-radius:10px;min-width:0}
+#abt-medical-demo .attachment-card>div:nth-child(2){flex:1;min-width:0}
+#abt-medical-demo .attachment-card strong{display:block;font-size:13px;overflow-wrap:anywhere}
+#abt-medical-demo .attachment-card .small{display:block;margin-top:4px}
+#abt-medical-demo .attachment-card .actions{margin:0;gap:6px}
+#abt-medical-demo .attachment-card button,#abt-medical-demo .attachment-card a{padding:7px 9px;font-size:12px}
+#abt-medical-demo .attachment-number{display:grid;place-items:center;width:30px;height:34px;flex:none;background:var(--blue-soft);color:var(--blue);border-radius:7px;font-size:12px;font-weight:600}
+#abt-medical-demo .attachment-preview{margin-top:16px;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--bg);scroll-margin-top:140px}
+#abt-medical-demo .attachment-preview-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
+#abt-medical-demo .attachment-preview-head>div:first-child{min-width:0;flex:1}
+#abt-medical-demo #attachment-preview-name{display:block;overflow-wrap:anywhere}
+#abt-medical-demo #attachment-preview-meta{display:block;margin-top:5px}
+#abt-medical-demo .attachment-preview-head .actions{margin:0}
+#abt-medical-demo .attachment-tools{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:12px 0;flex-wrap:wrap}
+#abt-medical-demo #attachment-image-tools{display:flex;align-items:center;gap:8px}
+#abt-medical-demo #attachment-zoom-label{font-size:12px;min-width:36px;text-align:center;font-variant-numeric:tabular-nums}
+#abt-medical-demo .attachment-tools button{font-size:12px;padding:7px 10px}
+#abt-medical-demo .attachment-preview-stage{margin-top:10px;overflow:auto;border:1px solid var(--line);border-radius:8px;background:var(--neutral-soft);max-height:420px;min-height:120px}
+#abt-medical-demo .attachment-preview-stage:empty{display:none}
+#abt-medical-demo #attachment-preview-image{display:block;max-width:none;height:auto;margin:auto}
+#abt-medical-demo #attachment-preview-pdf{display:block;width:100%;height:420px;border:0;background:white}
+#abt-medical-demo .preview-expanded .attachment-preview-stage{max-height:650px}
+#abt-medical-demo .preview-expanded #attachment-preview-pdf{height:650px}
+#abt-medical-demo .claim-timeline{list-style:none;margin:18px 0 0;padding:0 0 0 18px;border-left:2px solid var(--line)}
+#abt-medical-demo .claim-timeline li{position:relative;padding:0 0 22px 10px}
+#abt-medical-demo .claim-timeline li:before{content:'';position:absolute;left:-25px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--brand);border:2px solid var(--panel)}
+#abt-medical-demo .claim-timeline strong,#abt-medical-demo .claim-timeline span{display:block}
+#abt-medical-demo .claim-timeline span{margin-top:5px}
+@media(max-width:850px){#abt-medical-demo .attachment-list{grid-template-columns:1fr}#abt-medical-demo .claim-finance-grid{grid-template-columns:1fr}}
+@media(max-width:600px){#abt-medical-demo .claim-header-main{display:block}#abt-medical-demo .claim-header-main>.actions{justify-content:space-between;margin-top:10px}#abt-medical-demo .claim-header-main .badge{max-width:220px}#abt-medical-demo .claim-detail-tabs button{font-size:12px;padding:10px 8px}#abt-medical-demo .attachment-preview{padding:10px;scroll-margin-top:185px}#abt-medical-demo .attachment-card{flex-wrap:wrap}#abt-medical-demo .attachment-preview-head>.actions{width:100%;gap:6px}#abt-medical-demo .attachment-preview-head button,#abt-medical-demo .attachment-preview-head a{font-size:12px;padding:8px}#abt-medical-demo .attachment-preview-stage{max-height:340px}#abt-medical-demo #attachment-preview-pdf{height:340px}}
+#abt-medical-demo #attachment-pdf-tools{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+#abt-medical-demo #attachment-pdf-page,#abt-medical-demo #attachment-pdf-zoom-label{font-size:12px;min-width:38px;text-align:center;font-variant-numeric:tabular-nums}
+#abt-medical-demo canvas#attachment-preview-pdf{display:block;max-width:none;border:0;background:white;margin:10px auto}
+
+#abt-medical-demo .hr-action-summary{grid-template-columns:repeat(3,minmax(0,1fr))}
+#abt-medical-demo button.summary-action{display:flex;flex-direction:column;align-items:flex-start;text-align:left;min-width:0;min-height:145px;position:relative;gap:6px;border:1px solid var(--line);font:inherit;cursor:pointer;transition:box-shadow .15s ease,border-color .15s ease}
+#abt-medical-demo .summary-action .amount{display:block;font-weight:700;line-height:1.3}
+#abt-medical-demo .summary-action .summary-note{font-size:12px;color:var(--muted);font-weight:400;overflow-wrap:anywhere}
+#abt-medical-demo .summary-action .summary-action-hint{font-size:11px;color:var(--brand);display:flex;justify-content:space-between;width:100%;gap:12px;margin-top:auto;padding-top:5px;font-weight:600}
+#abt-medical-demo .summary-action-hint>span{font-size:15px;color:inherit}
+#abt-medical-demo button.summary-action:hover{border-color:var(--brand);box-shadow:0 2px 10px #00774418}
+#abt-medical-demo button.summary-action.summary-selected{border-color:var(--brand);box-shadow:inset 0 0 0 1px var(--brand)}
+#abt-medical-demo button.summary-action:focus-visible{outline:3px solid var(--brand);outline-offset:3px}
+#abt-medical-demo .summary-scope{margin:-8px 0 16px}
+#abt-medical-demo .hr-status-selection{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 12px;margin:0 0 12px;border:1px solid var(--line);border-radius:8px;background:var(--soft);font-size:12px}
+#abt-medical-demo .hr-status-selection button{font-size:12px;padding:7px 10px}
+@media(max-width:760px){#abt-medical-demo .hr-action-summary{grid-template-columns:repeat(2,minmax(0,1fr))}#abt-medical-demo button.summary-action{min-height:150px}#abt-medical-demo .summary-action .amount{font-size:20px}}
+@media(max-width:420px){#abt-medical-demo .summary-action .amount{font-size:18px}#abt-medical-demo button.summary-action{padding:12px;min-height:145px}}
+
+#abt-medical-demo .claim-progress-inline{margin-top:8px;max-width:290px;min-width:190px;display:grid;gap:5px;font-size:12px;line-height:1.5}
+#abt-medical-demo .claim-progress-inline .stage-age{color:var(--muted);font-variant-numeric:tabular-nums}
+#abt-medical-demo .claim-progress-inline .stage-next{color:var(--muted);overflow-wrap:anywhere}
+#abt-medical-demo .claim-progress-inline .stage-next strong{display:inline;font-weight:600}
+#abt-medical-demo .claim-progress-panel{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr);gap:12px 24px;background:var(--blue-soft);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 18px}
+#abt-medical-demo .claim-progress-panel>div>span{display:block}
+#abt-medical-demo .stage-detail-age{display:block;color:var(--ink);font-size:18px;margin:5px 0;font-variant-numeric:tabular-nums}
+#abt-medical-demo .stage-detail-next{color:var(--ink);margin:5px 0 0;font-size:13px;line-height:1.6}
+#abt-medical-demo .progress-disclaimer{grid-column:1/-1;border-top:1px solid var(--line);padding-top:9px;margin:0;font-size:11px;color:var(--muted)}
+@media(max-width:600px){#abt-medical-demo .claim-progress-panel{grid-template-columns:1fr;padding:12px;gap:12px}#abt-medical-demo .stage-detail-age{font-size:16px}}
+
+/* Original Abhitech artwork; proportional display on header and sign-in. */
+#abt-medical-demo .brand{max-width:100%;min-width:0}
+#abt-medical-demo .brand>div{min-width:0}
+#abt-medical-demo .brand-logo{display:block;flex:0 0 auto;width:154px;height:54px;object-fit:contain;background:#fff;border-radius:6px;padding:4px}
+#abt-medical-demo .brand-divider{width:1px;height:38px;flex:none;background:var(--line);margin:0 2px}
+#abt-medical-demo .login-logo{display:block;width:min(260px,100%);height:auto;object-fit:contain;background:#fff;padding:8px;border-radius:6px;justify-self:center;margin:0 0 8px}
+@media(max-width:600px){#abt-medical-demo .brand-logo{width:128px;height:44px;padding:3px}#abt-medical-demo .brand-divider{height:32px;margin:0}#abt-medical-demo .brand{gap:10px}#abt-medical-demo .login-logo{width:min(230px,100%)}}
+
+/* Finance: claim detail beside the unchanged SOP Payment Request. */
+#abt-medical-demo .finance-left-column{min-width:0;display:grid;gap:18px}
+#abt-medical-demo .finance-claim-summary{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--bg);overflow-wrap:anywhere}
+#abt-medical-demo .finance-claim-summary h3{margin-top:0}
+#abt-medical-demo .finance-claim-summary .facts{grid-template-columns:1fr 1fr;gap:14px}
+#abt-medical-demo .finance-claim-summary table{width:100%;table-layout:fixed}
+#abt-medical-demo .finance-claim-summary th.money{width:34%}
+#abt-medical-demo .finance-document-list{padding-left:18px;line-height:1.7}
+@media(max-width:500px){#abt-medical-demo .finance-claim-summary .facts{grid-template-columns:1fr}}
+
+#abt-medical-demo #payment-request-preview{margin-top:20px}
+#abt-medical-demo #payment-request-preview .sop-ready{margin-top:0}
+
+/* Screenshot preview: approximately 4:3, preserving complete SOP fields. */
+#abt-medical-demo dialog.finance-ready-dialog{position:fixed;inset:0;margin:auto!important;width:min(960px,calc(100vw - 32px));aspect-ratio:4/3;max-width:none;max-height:calc(100dvh - 24px);overflow:auto;box-sizing:border-box;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--ink);box-shadow:0 24px 80px #0006;scroll-margin:0}
+#abt-medical-demo dialog.finance-ready-dialog::backdrop{background:#081217c9}
+#abt-medical-demo .finance-ready-reference{display:flex;justify-content:space-between;gap:16px;align-items:center;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid var(--line);font-size:14px;line-height:1.45}
+#abt-medical-demo .finance-ready-reference strong{max-width:52%}
+#abt-medical-demo .finance-ready-reference span{font-size:12px;color:var(--muted);text-align:right}
+#abt-medical-demo .finance-ready-dialog .claim-finance-grid{grid-template-columns:minmax(0,2fr) minmax(0,3fr);gap:14px;align-items:stretch}
+#abt-medical-demo .finance-ready-dialog .finance-claim-summary{padding:14px;border-radius:10px;overflow:hidden}
+#abt-medical-demo .finance-ready-dialog .finance-claim-summary h3{background:var(--brand);color:var(--onbrand);font-size:15px;font-weight:600;line-height:1.4;padding:11px 14px;margin:-14px -14px 16px;border-bottom:1px solid var(--line)}
+#abt-medical-demo .finance-ready-dialog .sop-ready{padding:0;margin:0;border:1px solid var(--line);border-radius:10px;background:var(--bg);overflow:hidden;min-width:0}
+#abt-medical-demo .finance-ready-dialog .sop-table{margin:0;table-layout:fixed;width:100%}
+#abt-medical-demo .finance-ready-dialog .sop-table td,#abt-medical-demo .finance-ready-dialog .sop-table tbody th{padding:9px 10px;font-size:14px;line-height:1.4;overflow-wrap:anywhere}
+#abt-medical-demo .finance-ready-dialog .sop-table tbody th{width:39%}
+#abt-medical-demo .finance-ready-dialog .sop-table thead th{padding:11px 10px;font-size:15px;line-height:1.4;font-weight:600}
+#abt-medical-demo .finance-ready-dialog .facts{font-size:14px;gap:14px 10px;line-height:1.45}
+#abt-medical-demo .finance-ready-dialog .facts span{font-size:12px}
+#abt-medical-demo .finance-ready-dialog .note{font-size:14px;line-height:1.5;margin:16px 0}
+#abt-medical-demo .finance-ready-dialog .finance-claim-summary td,#abt-medical-demo .finance-ready-dialog .finance-claim-summary th{padding:10px 6px;font-size:14px;line-height:1.4}
+#abt-medical-demo .finance-ready-dialog .finance-claim-summary th{font-size:12px}
+#abt-medical-demo .finance-ready-dialog .help{font-size:12px;margin:10px 12px}
+@media(max-width:650px){#abt-medical-demo dialog.finance-ready-dialog{width:calc(100vw - 16px);padding:12px;aspect-ratio:auto}#abt-medical-demo .finance-ready-dialog .claim-finance-grid{grid-template-columns:1fr}#abt-medical-demo .finance-ready-reference{align-items:start;flex-direction:column;gap:4px}#abt-medical-demo .finance-ready-reference strong{max-width:100%}#abt-medical-demo .finance-ready-reference span{text-align:left}}
+
+#abt-medical-demo .finance-ready-dialog .finance-ready-reason{margin:14px 0;overflow-wrap:anywhere}
+#abt-medical-demo .finance-ready-dialog .finance-reason-label{display:block;margin-bottom:5px;font-size:12px;color:var(--muted);font-weight:500}
+#abt-medical-demo .finance-ready-dialog .finance-reason-text{display:block;font-size:16px;line-height:1.45;color:var(--ink);font-weight:600}
+
+/* Three focused claim tabs: detail, Finance, and audit history. */
+#abt-medical-demo .finance-workspace{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr);gap:20px;align-items:start}
+#abt-medical-demo .finance-workspace>div{min-width:0}
+#abt-medical-demo .finance-workspace .splitline:first-child{display:none}
+#abt-medical-demo .finance-workspace .sop-table{margin-top:0}
+#abt-medical-demo .finance-workspace .finance-actions{padding:18px}
+#abt-medical-demo .finance-guidance{font-size:12px;line-height:1.6;color:var(--muted);margin:12px 0}
+#abt-medical-demo .finance-guidance summary,#abt-medical-demo .progress-disclaimer summary{cursor:pointer;color:var(--muted)}
+#abt-medical-demo .finance-guidance p,#abt-medical-demo .progress-disclaimer p{margin:8px 0 0}
+@media(max-width:850px){#abt-medical-demo .finance-workspace{grid-template-columns:1fr}}
+
+#abt-medical-demo .detailgrid:not(:has(>.claim-review)){grid-template-columns:1fr}
+
+/* Medical monitoring sits beneath claim details, alongside the SOP table. */
+#abt-medical-demo .finance-ready-left{display:flex;flex-direction:column;gap:12px;min-width:0}
+#abt-medical-demo .finance-ready-monitoring{border:1px solid var(--line);border-radius:10px;background:var(--bg);overflow:hidden}
+#abt-medical-demo .finance-ready-monitoring h3{margin:0;padding:10px 12px;font-size:14px;line-height:1.4;color:var(--onbrand);background:var(--brand)}
+#abt-medical-demo .finance-ready-balances{display:grid;grid-template-columns:1fr 1fr;padding:12px;gap:14px 10px}
+#abt-medical-demo .finance-ready-balances span{display:block;font-size:12px;line-height:1.4;color:var(--muted);margin-bottom:5px}
+#abt-medical-demo .finance-ready-balances strong{font-size:14px;line-height:1.4;overflow-wrap:anywhere}
+
+/* Verified with the longest imported optics note in an isolated app copy. */
+#abt-medical-demo .finance-ready-dialog .finance-claim-summary .note:not(.finance-ready-reason){font-size:13px;line-height:1.4;margin:10px 0}
+/* HR monitoring only: compact navigation and quiet, data-first surfaces. */
+#abt-medical-demo .top.hr-monitor-top{padding:12px 24px;gap:16px;min-height:74px}
+#abt-medical-demo .hr-monitor-top .brand-logo{width:124px;height:42px;padding:3px}
+#abt-medical-demo .hr-monitor-top .brand strong{font-size:15px}
+#abt-medical-demo .hr-header-tools{display:flex;align-items:center;gap:12px}
+#abt-medical-demo .hr-header-menu{position:relative;font-size:13px}
+#abt-medical-demo .hr-header-menu>summary{display:flex;align-items:center;gap:9px;list-style:none;cursor:pointer;padding:7px 9px;border-radius:6px}
+#abt-medical-demo .hr-header-menu>summary::-webkit-details-marker{display:none}
+#abt-medical-demo .hr-header-menu[open]>summary{background:var(--soft)}
+#abt-medical-demo .hr-avatar{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--soft);color:var(--brand);font-weight:650}
+#abt-medical-demo .hr-menu-content{position:absolute;top:calc(100% + 9px);right:0;z-index:8;width:min(330px,calc(100vw - 32px));padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 12px 32px #0003}
+#abt-medical-demo .hr-menu-content select{margin-top:8px}
+#abt-medical-demo .hr-account-actions{display:grid;gap:8px;width:220px}
+#abt-medical-demo .hr-account-actions button{text-align:left;border:0;background:transparent;border-radius:5px}
+#abt-medical-demo .hr-account-actions button:hover{background:var(--soft)}
+#abt-medical-demo .hr-monitor-shell{display:grid;grid-template-columns:176px minmax(0,1fr);min-height:calc(100dvh - 120px)}
+#abt-medical-demo .hr-sidebar{padding:27px 12px;border-right:1px solid var(--line);background:var(--panel)}
+#abt-medical-demo .hr-sidebar-label{display:block;padding:0 12px 14px;color:var(--muted);font-size:10px;letter-spacing:1.3px;font-weight:600}
+#abt-medical-demo .hr-sidebar nav{display:grid;gap:5px}
+#abt-medical-demo .hr-sidebar button{display:flex;gap:10px;align-items:center;text-align:left;padding:10px 12px;border:0;border-radius:6px;background:transparent;font-size:13px;color:var(--muted)}
+#abt-medical-demo .hr-sidebar button>span{width:17px;text-align:center;font-size:16px}
+#abt-medical-demo .hr-sidebar button.hr-nav-current{background:var(--soft);color:var(--brand);font-weight:600}
+#abt-medical-demo .hr-sidebar button:hover{background:var(--soft);color:var(--ink)}
+#abt-medical-demo .body.hr-monitoring{display:flex;flex-direction:column;gap:18px;padding:25px 28px;min-width:0}
+#abt-medical-demo .hr-workspace-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+#abt-medical-demo .hr-workspace-head h2{font-size:22px;letter-spacing:-.4px}
+#abt-medical-demo .hr-workspace-head p{font-size:12px;margin-top:4px}
+#abt-medical-demo .hr-view-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#abt-medical-demo .hr-view-controls select{width:auto;min-width:90px;padding:8px 10px;font-size:12px;min-height:36px}
+#abt-medical-demo .hr-view-controls .module-nav{padding:3px;background:var(--panel);border:1px solid var(--line);border-radius:7px;gap:2px}
+#abt-medical-demo .hr-view-controls .module-nav button{padding:5px 10px;min-height:28px;border:0;background:transparent;border-radius:4px;font-size:12px}
+#abt-medical-demo .hr-view-controls .module-nav button.selected{background:var(--soft);color:var(--brand)}
+#abt-medical-demo .hr-monitoring .hr-tabs{gap:22px;border-bottom:1px solid var(--line)}
+#abt-medical-demo .hr-monitoring .hr-tabs button{padding:8px 0 12px;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:var(--muted);font-size:13px}
+#abt-medical-demo .hr-monitoring .hr-tabs button.selected{background:transparent;border-bottom-color:var(--brand);color:var(--ink);font-weight:600}
+#abt-medical-demo .hr-monitoring .hr-compact-summary{display:grid;grid-template-columns:repeat(var(--summary-count),minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:8px;background:var(--panel);overflow:hidden}
+#abt-medical-demo .hr-monitoring .hr-compact-summary>.metric{padding:12px 14px;background:transparent;border:0;border-right:1px solid var(--line);border-radius:0;box-shadow:none;min-height:92px;display:flex;flex-direction:column;gap:4px;justify-content:flex-start}
+#abt-medical-demo .hr-monitoring .hr-compact-summary>.metric:last-child{border-right:0}
+#abt-medical-demo .hr-monitoring .hr-compact-summary .summary-label{font-size:11px;line-height:1.4;color:var(--muted)}
+#abt-medical-demo .hr-monitoring .hr-compact-summary .amount{font-size:23px;line-height:1.2;letter-spacing:-.4px;color:var(--ink);margin:0;font-weight:650}
+#abt-medical-demo .hr-monitoring .hr-compact-summary .summary-note{font-size:10px;line-height:1.3;color:var(--muted)}
+#abt-medical-demo .hr-monitoring .hr-compact-summary .summary-selected{background:var(--soft);box-shadow:inset 0 -2px 0 var(--brand)}
+#abt-medical-demo .hr-monitoring .hr-compact-summary .summary-selected .amount{color:var(--brand)}
+#abt-medical-demo .hr-monitoring .hr-compact-summary button:hover{background:var(--soft)}
+#abt-medical-demo .hr-monitoring #hr-tab-panel{border:1px solid var(--line);border-radius:8px;padding:18px 20px;background:var(--panel);box-shadow:none}
+#abt-medical-demo .hr-monitoring #hr-tab-panel .boxhead{margin-bottom:15px;gap:12px}
+#abt-medical-demo .hr-monitoring #hr-tab-panel h3{font-size:14px;color:var(--ink)}
+#abt-medical-demo .hr-monitoring .history-downloads{gap:7px}
+#abt-medical-demo .hr-monitoring .history-downloads button,#abt-medical-demo .hr-monitoring .history-downloads a{font-size:12px;padding:6px 10px;min-height:32px;border-radius:5px;background:transparent;color:var(--muted);border:1px solid var(--line);box-shadow:none}
+#abt-medical-demo .hr-monitoring .hr-filterbar{display:flex;gap:10px;margin-bottom:10px;align-items:center}
+#abt-medical-demo .hr-monitoring .hr-filterbar input,#abt-medical-demo .hr-monitoring .hr-filterbar select{padding:8px 10px;font-size:12px;min-height:36px;border-radius:5px;background:var(--bg)}
+#abt-medical-demo .hr-monitoring .hr-filterbar input{flex:1;min-width:180px}
+#abt-medical-demo .hr-monitoring .hr-filterbar select{width:205px}
+#abt-medical-demo .hr-monitoring .hr-list-help{font-size:11px;color:var(--muted);margin:0 0 13px;line-height:1.5}
+#abt-medical-demo .hr-monitoring .hr-list-help summary{cursor:pointer}
+#abt-medical-demo .hr-monitoring .hr-list-help p{margin-top:5px}
+#abt-medical-demo .hr-monitoring .hr-status-selection{padding:5px 0;background:transparent;border:0;margin:0 0 10px;font-size:11px}
+#abt-medical-demo .hr-monitoring .hr-status-selection button{padding:3px 7px;min-height:26px;font-size:11px;border:0;background:transparent;color:var(--brand)}
+#abt-medical-demo .hr-monitoring table{font-size:12px}
+#abt-medical-demo .hr-monitoring .history-table{min-width:860px}
+#abt-medical-demo .hr-monitoring table thead th{padding:10px 9px;background:var(--bg);font-size:10px;text-transform:none;letter-spacing:.1px;border:0;border-bottom:1px solid var(--line);color:var(--muted)}
+#abt-medical-demo .hr-monitoring table tbody td{padding:11px 9px;background:transparent;border-bottom:1px solid var(--line);font-size:12px}
+#abt-medical-demo .hr-monitoring table tbody tr:nth-child(even) td{background:transparent}
+#abt-medical-demo .hr-monitoring table tbody tr:hover td{background:var(--bg)}
+#abt-medical-demo .hr-monitoring table td:first-child strong{font-size:12px;color:var(--ink)}
+#abt-medical-demo .hr-monitoring table .small{font-size:11px}
+#abt-medical-demo .hr-monitoring table .badge{font-size:10px;padding:3px 7px;line-height:1.4;max-width:180px;border-radius:5px}
+#abt-medical-demo .hr-monitoring .claim-progress-inline{margin-top:3px;min-width:0;max-width:180px;font-size:11px;line-height:1.4}
+#abt-medical-demo .hr-monitoring .stage-age[data-wait-days='']{display:none}
+#abt-medical-demo .hr-monitoring .history-table button,#abt-medical-demo .hr-monitoring #balance-table button{padding:5px 9px;min-height:30px;font-size:11px;border-radius:5px;background:transparent;border-color:var(--line)}
+#abt-medical-demo .hr-monitoring .hr-pagination{padding-top:12px;margin-top:0}
+#abt-medical-demo .hr-monitoring .hr-pagination button,#abt-medical-demo .hr-monitoring .hr-pagination select{min-height:30px;padding:4px 8px;font-size:11px}
+#abt-medical-demo .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1200px){#abt-medical-demo .hr-workspace-head{align-items:flex-start;flex-direction:column}#abt-medical-demo .body.hr-monitoring{padding:22px}#abt-medical-demo .hr-monitoring .hr-compact-summary .amount{font-size:20px}}
+@media(max-width:960px){#abt-medical-demo .hr-monitor-shell{grid-template-columns:144px minmax(0,1fr)}#abt-medical-demo .hr-sidebar{padding:22px 8px}#abt-medical-demo .hr-sidebar button{font-size:12px;padding:9px 8px}#abt-medical-demo .hr-monitoring .hr-compact-summary{grid-template-columns:repeat(3,minmax(0,1fr))}#abt-medical-demo .hr-monitoring .hr-compact-summary>.metric{min-height:82px;border-bottom:1px solid var(--line)}}
+@media(max-width:650px){#abt-medical-demo .hr-monitor-shell{display:block}#abt-medical-demo .hr-sidebar{padding:8px 12px;border-right:0;border-bottom:1px solid var(--line)}#abt-medical-demo .hr-sidebar-label{display:none}#abt-medical-demo .hr-sidebar nav{display:flex;flex-wrap:wrap;gap:2px}#abt-medical-demo .hr-sidebar button{padding:7px 9px;min-height:32px}#abt-medical-demo .body.hr-monitoring{padding:18px 14px;gap:14px}#abt-medical-demo .hr-monitoring .hr-compact-summary{grid-template-columns:repeat(2,minmax(0,1fr))}#abt-medical-demo .hr-monitoring .hr-filterbar select{flex:1;width:auto;min-width:130px}#abt-medical-demo .hr-monitor-top{padding:10px 14px}#abt-medical-demo .hr-monitor-top .brand-logo{width:100px;height:34px}#abt-medical-demo .hr-header-tools{gap:2px}#abt-medical-demo .hr-header-menu>summary{font-size:12px;padding:5px}#abt-medical-demo .hr-monitor-top .brand strong{font-size:13px}#abt-medical-demo .hr-header-tools .hr-header-menu:first-child>summary{max-width:125px}#abt-medical-demo .hr-view-controls{gap:7px}#abt-medical-demo .hr-workspace-head h2{font-size:20px}}
+
+#abt-medical-demo .hr-sidebar svg{flex-shrink:0}
+#abt-medical-demo .hr-monitoring .history-table tbody tr,#abt-medical-demo .hr-monitoring .history-table tbody tr:nth-child(even){background:transparent}
+#abt-medical-demo .hr-monitoring .history-table tbody tr:hover{background:var(--bg)}
+#abt-medical-demo .hr-monitoring .history-table td{border-bottom-color:var(--line)}
+#abt-medical-demo .hr-monitoring .box:has(.history-table) .download-link{background:transparent;border-color:var(--line);color:var(--muted)}
+/* Employee portal: one balance strip and a compact, expandable profile. */
+#abt-medical-demo .body.employee-portal{display:flex;flex-direction:column;gap:16px;padding:26px 30px;min-width:0}
+#abt-medical-demo .employee-workspace-head{display:flex;justify-content:space-between;align-items:center;gap:16px}
+#abt-medical-demo .employee-workspace-head h2{font-size:22px;letter-spacing:-.4px}
+#abt-medical-demo .employee-workspace-head p{font-size:12px;margin-top:4px}
+#abt-medical-demo .employee-workspace-head button{border-radius:6px;font-size:13px;min-height:36px;padding:7px 14px;white-space:nowrap}
+#abt-medical-demo .employee-view-controls{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+#abt-medical-demo .employee-view-controls .module-nav{padding:3px;border:1px solid var(--line);border-radius:7px;background:var(--panel);gap:2px}
+#abt-medical-demo .employee-view-controls .module-nav button{border:0;border-radius:4px;min-height:28px;padding:5px 11px;font-size:12px;background:transparent}
+#abt-medical-demo .employee-view-controls .module-nav button.selected{background:var(--soft);color:var(--brand)}
+#abt-medical-demo .employee-view-filters{display:flex;gap:8px}
+#abt-medical-demo .employee-view-filters select{width:auto;min-width:95px;min-height:34px;padding:6px 10px;font-size:12px;border-radius:5px}
+#abt-medical-demo .employee-acting-notice{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:12px;background:var(--blue-soft);border:1px solid var(--line);border-radius:6px;padding:9px 12px}
+#abt-medical-demo .employee-acting-notice button{font-size:11px;min-height:28px;padding:4px 9px;border-radius:5px;white-space:nowrap}
+#abt-medical-demo .employee-balance-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,1.2fr);border:1px solid var(--line);border-radius:8px;background:var(--panel);overflow:hidden}
+#abt-medical-demo .employee-balance-item{padding:15px 20px;display:flex;flex-direction:column;justify-content:center;gap:6px;min-width:0;border-right:1px solid var(--line)}
+#abt-medical-demo .employee-balance-item>span{font-size:12px;color:var(--muted);line-height:1.4}
+#abt-medical-demo .employee-balance-item>strong{font-size:21px;letter-spacing:-.35px;line-height:1.25;font-weight:600;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+#abt-medical-demo .employee-balance-item.employee-balance-available{border-right:0;background:var(--soft);box-shadow:inset 0 -2px var(--brand)}
+#abt-medical-demo .employee-balance-available>strong{font-size:27px;color:var(--brand);font-weight:650}
+#abt-medical-demo .employee-portal .employee-profile{padding:14px 18px;background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:none}
+#abt-medical-demo .employee-profile>.row>div>strong{font-size:13px;font-weight:600}
+#abt-medical-demo .employee-profile>.row p{font-size:11px;margin:3px 0 0}
+#abt-medical-demo .employee-profile>.row .badge{font-size:10px;border-radius:5px;padding:4px 8px}
+#abt-medical-demo .employee-profile-details{font-size:12px;margin-top:10px}
+#abt-medical-demo .employee-profile-details>summary{cursor:pointer;color:var(--muted);width:fit-content;font-size:11px}
+#abt-medical-demo .employee-profile-details[open]>summary{color:var(--brand)}
+#abt-medical-demo .employee-profile-details .profile{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;border-top:1px solid var(--line);margin-top:12px;padding-top:12px}
+#abt-medical-demo .employee-profile-details .profile span{font-size:11px}
+#abt-medical-demo .employee-profile-details .profile b{font-size:12px;margin-top:3px;line-height:1.5;overflow-wrap:anywhere}
+#abt-medical-demo .employee-profile-details>.help{font-size:11px;line-height:1.5;margin-top:12px}
+#abt-medical-demo .employee-portal .employee-history{padding:18px 20px;background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:none}
+#abt-medical-demo .employee-history .boxhead{margin-bottom:12px}
+#abt-medical-demo .employee-history .boxhead h3{font-size:14px;color:var(--ink)}
+#abt-medical-demo .employee-history .history-downloads{gap:7px}
+#abt-medical-demo .employee-history .history-downloads button,#abt-medical-demo .employee-history .history-downloads a{padding:6px 10px;font-size:12px;min-height:32px;border-radius:5px;background:transparent;border:1px solid var(--line);color:var(--muted)}
+#abt-medical-demo .employee-history .process-time-note{margin:0 0 12px;font-size:11px}
+#abt-medical-demo .employee-history .history-table{font-size:12px}
+#abt-medical-demo .employee-history .history-table thead th{background:var(--bg);color:var(--muted);padding:10px 9px;font-size:10px;letter-spacing:.1px;text-transform:none;border-bottom-color:var(--line)}
+#abt-medical-demo .employee-history .history-table tbody tr,#abt-medical-demo .employee-history .history-table tbody tr:nth-child(even){background:transparent}
+#abt-medical-demo .employee-history .history-table tbody tr:hover{background:var(--bg)}
+#abt-medical-demo .employee-history .history-table td{padding:11px 9px;border-bottom-color:var(--line);font-size:12px}
+#abt-medical-demo .employee-history .history-table .small{font-size:11px}
+#abt-medical-demo .employee-history .history-table .badge{font-size:10px;line-height:1.4;border-radius:5px;padding:3px 7px}
+#abt-medical-demo .employee-history .history-table button{padding:5px 9px;min-height:30px;font-size:11px;border-radius:5px;background:transparent;border-color:var(--line)}
+#abt-medical-demo .employee-history .claim-progress-inline{margin-top:3px;min-width:0;max-width:180px;font-size:11px}
+#abt-medical-demo .employee-history .stage-age[data-wait-days='']{display:none}
+@media(max-width:900px){#abt-medical-demo .body.employee-portal{padding:22px}#abt-medical-demo .employee-balance-item{padding:14px}#abt-medical-demo .employee-balance-item>strong{font-size:18px}#abt-medical-demo .employee-balance-available>strong{font-size:23px}#abt-medical-demo .employee-profile-details .profile{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){#abt-medical-demo .body.employee-portal{padding:18px 14px;gap:14px}#abt-medical-demo .employee-workspace-head h2{font-size:20px}#abt-medical-demo .employee-workspace-head{align-items:flex-start;flex-wrap:wrap}#abt-medical-demo .employee-workspace-head button{margin-left:auto}#abt-medical-demo .employee-balance-summary{grid-template-columns:repeat(2,minmax(0,1fr))}#abt-medical-demo .employee-balance-item{border-bottom:1px solid var(--line)}#abt-medical-demo .employee-balance-item:nth-child(2){border-right:0}#abt-medical-demo .employee-balance-item:nth-child(n+3){border-bottom:0}#abt-medical-demo .employee-profile-details .profile{grid-template-columns:1fr}#abt-medical-demo .employee-acting-notice{flex-wrap:wrap}#abt-medical-demo .employee-portal .employee-history{padding:14px}#abt-medical-demo .employee-profile>.row{gap:8px}#abt-medical-demo .employee-profile>.row>div{min-width:0}#abt-medical-demo .employee-profile>.row p{overflow-wrap:anywhere}}
+#abt-medical-demo .employee-portal .employee-history.box:has(.history-table) .download-link{background:transparent;color:var(--muted);border-color:var(--line)}
+
+/* One consistent HR shell for Monitoring, Data Karyawan and Pengaturan. */
+#abt-medical-demo .hr-main-pane{min-width:0}
+#abt-medical-demo .hr-main-pane>.body{padding:25px 28px;display:flex;flex-direction:column;gap:18px;min-width:0}
+#abt-medical-demo .hr-main-pane>.body>.intro h2{font-size:22px;letter-spacing:-.4px}
+#abt-medical-demo .hr-main-pane>.body>.intro p{font-size:12px;line-height:1.5;margin-top:4px}
+#abt-medical-demo .hr-main-pane>.body>.intro .eyebrow{font-size:10px;margin-bottom:4px}
+#abt-medical-demo .hr-main-pane>.body>.intro>button{font-size:12px;min-height:34px;padding:7px 12px;border-radius:6px}
+#abt-medical-demo .hr-main-pane>.body>.box{border:1px solid var(--line);border-radius:8px;padding:18px 20px;background:var(--panel);box-shadow:none}
+#abt-medical-demo .hr-main-pane>.body>.box>.toolbar{margin-bottom:12px}
+#abt-medical-demo .hr-main-pane>.body>.box>.toolbar input,#abt-medical-demo .hr-main-pane>.body>.box>.toolbar select{font-size:12px;padding:8px 10px;min-height:36px;border-radius:5px;background:var(--bg)}
+#abt-medical-demo .hr-main-pane>.body>.master-tabs{gap:5px;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid var(--line)}
+#abt-medical-demo .hr-main-pane>.body>.master-tabs button{padding:6px 10px;min-height:32px;font-size:12px;border-radius:5px}
+#abt-medical-demo .hr-main-pane>.body>.box>.scroll>table{font-size:12px}
+#abt-medical-demo .hr-main-pane>.body>.box>.scroll>table th{background:var(--bg);font-size:10px;letter-spacing:.1px;text-transform:none;padding:10px 9px}
+#abt-medical-demo .hr-main-pane>.body>.box>.scroll>table td{padding:11px 9px;font-size:12px;border-bottom-color:var(--line)}
+#abt-medical-demo .hr-main-pane>.body>.box>.scroll>table td .actions{margin-top:0;gap:5px}
+#abt-medical-demo .hr-main-pane>.body>.box>.scroll>table td button{font-size:11px;padding:5px 8px;min-height:30px;border-radius:5px}
+@media(max-width:1200px){#abt-medical-demo .hr-main-pane>.body{padding:22px}}
+@media(max-width:650px){#abt-medical-demo .hr-main-pane>.body{padding:18px 14px;gap:14px}#abt-medical-demo .hr-main-pane>.body>.intro h2{font-size:20px}#abt-medical-demo .hr-main-pane>.body>.box{padding:14px}}
+#abt-medical-demo .hr-sidebar button.hr-nav-current:hover{background:var(--soft);color:var(--brand)}
+
+#abt-medical-demo .employee-editor-controls{display:flex;align-items:center;gap:8px}
+#abt-medical-demo .app-dialog#employee-id-dialog{width:min(760px,calc(100vw - 32px))}
+#abt-medical-demo .employee-id-editor{border:0;padding:22px}
+#abt-medical-demo .employee-id-person{margin-bottom:18px}
+#abt-medical-demo .employee-id-editor .check{margin-top:16px}
+#abt-medical-demo .employee-id-history{margin-top:20px;border-top:1px solid var(--line);padding-top:14px;font-size:12px}
+#abt-medical-demo .employee-id-history summary{cursor:pointer;color:var(--muted)}
+#abt-medical-demo .employee-id-history .scroll{margin-top:12px}
+
+/* HR: keep header/sidebar in place; only the right-hand page scrolls. */
+#abt-medical-demo.hr-shell-active{height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+#abt-medical-demo.hr-shell-active>.top,#abt-medical-demo.hr-shell-active>.notice{flex:0 0 auto}
+#abt-medical-demo.hr-shell-active>.hr-monitor-shell{flex:1 1 auto;min-height:0;overflow:hidden}
+#abt-medical-demo.hr-shell-active .hr-sidebar{height:100%;min-height:0;overflow-y:auto;align-self:start}
+#abt-medical-demo.hr-shell-active .hr-main-pane{height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+#abt-medical-demo .employee-pagination{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-top:14px;margin-top:4px}
+#abt-medical-demo .employee-pagination .roles{align-items:end}
+#abt-medical-demo .employee-pagination label{display:flex;align-items:center;gap:8px;font-size:11px}
+#abt-medical-demo .employee-pagination select{width:70px;margin:0;padding:4px 8px;min-height:30px;font-size:11px}
+#abt-medical-demo .employee-pagination button{min-height:30px;padding:4px 9px;font-size:11px;border-radius:5px}
+@media(max-width:650px){#abt-medical-demo.hr-shell-active>.hr-monitor-shell{display:flex;flex-direction:column}#abt-medical-demo.hr-shell-active .hr-sidebar{flex:0 0 auto;height:auto;align-self:stretch;overflow:visible}#abt-medical-demo.hr-shell-active .hr-main-pane{flex:1 1 auto;height:auto;min-height:0}#abt-medical-demo .employee-pagination{align-items:flex-start;flex-direction:column}}
+
+/* Explicit separation of trial activity and retained claim evidence. */
+.test-mode-bar{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:9px 22px;background:#573e19;color:#ffe6ae;border-bottom:1px solid #bd914a;flex:0 0 auto;font-size:13px}.test-mode-bar a{color:#fff0ce;margin-left:auto}.test-mode-bar button{padding:5px 10px;border-color:#ae8a50;color:#fff0ce;background:#453419}.test-mode-bar strong{letter-spacing:.04em}.test-credentials{margin-top:auto;padding:18px 10px;color:#b8cbd7;font-size:12px}.test-credentials summary{cursor:pointer}.test-credentials p{line-height:1.6}.archive-action{border-top:1px solid #3b4c59;margin-top:18px;padding-top:10px}#toggle-archives[aria-pressed=true]{border-color:#76cfa7;color:#76cfa7}
+
+/* Phone layouts only. Desktop tables and export/print layouts are unchanged. */
+#abt-medical-demo .mobile-menu-toggle,#abt-medical-demo .mobile-preview-close{display:none}
+@media screen and (max-width:767px){
+ #abt-medical-demo{width:100%;min-width:0;min-height:100dvh;overflow-x:clip}
+ #abt-medical-demo .body,#abt-medical-demo .hr-main-pane>.body,#abt-medical-demo .body.employee-portal{padding:18px 14px;gap:16px;min-width:0}
+ #abt-medical-demo .body>*,#abt-medical-demo .box>*,#abt-medical-demo .hr-main-pane{min-width:0}
+ #abt-medical-demo .top.hr-monitor-top,#abt-medical-demo .top{padding:10px 14px;min-height:68px;gap:10px;position:relative;z-index:5}
+ #abt-medical-demo .brand{min-width:0;gap:9px;flex:1}
+ #abt-medical-demo .brand-logo,#abt-medical-demo .hr-monitor-top .brand-logo{width:94px;height:34px;flex:0 0 auto;padding:3px}
+ #abt-medical-demo .brand strong,#abt-medical-demo .hr-monitor-top .brand strong{font-size:13px;line-height:1.3}
+ #abt-medical-demo .brand .small{font-size:10px}
+ #abt-medical-demo .mobile-menu-toggle{display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;margin-left:auto;padding:7px 10px;font-size:12px;flex:0 0 auto}
+ #abt-medical-demo .mobile-menu-toggle>span:first-child{font-size:21px;line-height:1}
+ #abt-medical-demo .top>.hr-header-tools{display:none;order:3;flex-basis:100%;width:100%;gap:7px;padding-top:9px;border-top:1px solid var(--line);max-height:48dvh;overflow-y:auto;overscroll-behavior:contain}
+ #abt-medical-demo.mobile-menu-open .top>.hr-header-tools{display:grid;grid-template-columns:minmax(0,1fr)}
+ #abt-medical-demo .hr-header-menu>summary{min-height:44px;padding:8px 10px!important;max-width:none!important;font-size:13px!important;overflow-wrap:anywhere}
+ #abt-medical-demo .hr-menu-content{position:static;width:100%;max-width:100%;margin-top:6px;padding:12px;box-shadow:none}
+ #abt-medical-demo .hr-header-menu .hr-account-actions{width:100%}
+ #abt-medical-demo .hr-header-tools>button{text-align:left;min-height:44px}
+ #abt-medical-demo.hr-shell-active{height:100dvh}
+ #abt-medical-demo .hr-monitor-shell,#abt-medical-demo.hr-shell-active>.hr-monitor-shell{display:flex;flex-direction:column;min-height:0}
+ #abt-medical-demo .hr-sidebar,#abt-medical-demo.hr-shell-active .hr-sidebar{display:none;height:auto;width:100%;flex:0 0 auto;padding:8px 14px 12px;border-right:0;border-bottom:1px solid var(--line);max-height:35dvh;overflow-y:auto}
+ #abt-medical-demo.mobile-menu-open .hr-sidebar{display:block}
+ #abt-medical-demo .hr-sidebar-label{display:none}
+ #abt-medical-demo .hr-sidebar nav{display:grid;grid-template-columns:1fr;gap:4px}
+ #abt-medical-demo .hr-sidebar nav button{min-height:44px;padding:10px 12px;font-size:14px}
+ #abt-medical-demo.hr-shell-active .hr-main-pane{flex:1 1 auto;height:auto;min-height:0;overflow-y:auto;scrollbar-gutter:auto}
+ #abt-medical-demo .notice{padding:10px 14px;font-size:10px;gap:2px;line-height:1.4}
+ #abt-medical-demo .notice span{max-width:100%}
+ #abt-medical-demo .notice span:last-child{display:none}
+ #abt-medical-demo .test-mode-bar{padding:8px 14px;gap:5px 10px;font-size:11px}
+ #abt-medical-demo .test-mode-bar>span{flex-basis:100%}
+ #abt-medical-demo .test-mode-bar a{margin-left:0}
+ #abt-medical-demo .test-mode-bar button{margin-left:auto}
+ #abt-medical-demo .login{margin:22px 14px;padding:22px 18px;max-width:none}
+ #abt-medical-demo .intro,#abt-medical-demo .hr-workspace-head,#abt-medical-demo .employee-workspace-head{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+ #abt-medical-demo h2,#abt-medical-demo .hr-workspace-head h2,#abt-medical-demo .employee-workspace-head h2{font-size:21px;line-height:1.3}
+ #abt-medical-demo .employee-workspace-head button,#abt-medical-demo .intro>button{width:100%;margin-left:0;min-height:46px!important}
+ #abt-medical-demo .hr-view-controls,#abt-medical-demo .employee-view-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;width:100%}
+ #abt-medical-demo .hr-view-controls>.module-nav,#abt-medical-demo .employee-view-controls>.module-nav{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;width:100%}
+ #abt-medical-demo .hr-view-controls select,#abt-medical-demo .employee-view-filters select{width:100%;min-width:0;min-height:44px;font-size:16px}
+ #abt-medical-demo .employee-view-filters{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;width:100%;gap:8px}
+ #abt-medical-demo .module-nav button,#abt-medical-demo .hr-view-controls .module-nav button,#abt-medical-demo .employee-view-controls .module-nav button{min-height:44px;font-size:13px;padding:8px 10px}
+ #abt-medical-demo .hr-monitoring .hr-tabs{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:8px}
+ #abt-medical-demo .hr-monitoring .hr-tabs button{min-width:0;min-height:44px;font-size:12px;line-height:1.3;padding:8px 0 10px}
+ #abt-medical-demo .hr-monitoring .hr-compact-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #abt-medical-demo .hr-monitoring .hr-compact-summary>.metric{min-width:0;padding:12px;min-height:84px;border-bottom:1px solid var(--line)}
+ #abt-medical-demo .hr-monitoring .hr-compact-summary .amount{font-size:20px}
+ #abt-medical-demo .employee-balance-summary{grid-template-columns:1fr 1fr}
+ #abt-medical-demo .employee-balance-item{padding:13px 12px;border-bottom:1px solid var(--line);gap:5px}
+ #abt-medical-demo .employee-balance-item:nth-child(2n){border-right:0}
+ #abt-medical-demo .employee-balance-item:nth-child(n+3){border-bottom:0}
+ #abt-medical-demo .employee-balance-item>strong{font-size:19px}
+ #abt-medical-demo .employee-balance-available>strong{font-size:22px}
+ #abt-medical-demo .employee-profile>.row{align-items:flex-start;gap:9px}
+ #abt-medical-demo .employee-profile>.row>div{flex-basis:100%}
+ #abt-medical-demo .employee-profile-details .profile{grid-template-columns:1fr;gap:12px}
+ #abt-medical-demo .employee-profile>.row p,#abt-medical-demo .profile b{overflow-wrap:anywhere}
+ #abt-medical-demo .box,#abt-medical-demo .employee-portal .employee-history,#abt-medical-demo .hr-main-pane>.body>.box{padding:14px;border-radius:10px}
+ #abt-medical-demo .boxhead{align-items:flex-start;gap:10px}
+ #abt-medical-demo .boxhead h3{font-size:15px;line-height:1.4}
+ #abt-medical-demo .boxhead .history-downloads{flex-basis:100%;display:flex;gap:6px;flex-wrap:wrap}
+ #abt-medical-demo .history-downloads .download-link,#abt-medical-demo .history-downloads button{display:inline-flex;align-items:center;justify-content:center;flex:1;min-height:44px;padding:8px 10px;font-size:12px}
+ #abt-medical-demo .toolbar,#abt-medical-demo .hr-monitoring .hr-filterbar{display:grid;grid-template-columns:1fr;gap:8px}
+ #abt-medical-demo .toolbar input,#abt-medical-demo .toolbar select,#abt-medical-demo .hr-monitoring .hr-filterbar input,#abt-medical-demo .hr-monitoring .hr-filterbar select{width:100%;min-width:0;max-width:100%;min-height:44px;font-size:16px}
+ #abt-medical-demo .master-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ #abt-medical-demo .hr-main-pane>.body>.master-tabs button{min-height:44px;font-size:12px}
+ #abt-medical-demo .hr-pagination,#abt-medical-demo .employee-pagination{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+ #abt-medical-demo .hr-pagination .roles,#abt-medical-demo .employee-pagination .roles{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+ #abt-medical-demo .hr-pagination button,#abt-medical-demo .employee-pagination button{min-height:44px;font-size:13px;flex:1}
+ #abt-medical-demo .hr-pagination select,#abt-medical-demo .employee-pagination select{min-height:44px;font-size:16px}
+ #abt-medical-demo .scroll:has(>table.mobile-records){overflow:visible}
+ #abt-medical-demo table.mobile-records{display:block;width:100%;min-width:0!important;border-collapse:separate}
+ #abt-medical-demo table.mobile-records>thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ #abt-medical-demo table.mobile-records>tbody{display:grid;gap:12px;width:100%}
+ #abt-medical-demo table.mobile-records>tbody>tr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px;padding:15px;background:var(--bg)!important;border:1px solid var(--line);border-radius:10px;min-width:0}
+ #abt-medical-demo table.mobile-records>tbody>tr>td,#abt-medical-demo table.mobile-records>tbody>tr>th{display:flex;flex-direction:column;align-items:flex-start;gap:3px;min-width:0;max-width:100%;padding:0!important;border:0!important;background:transparent!important;font-size:13px!important;text-align:left;white-space:normal;overflow-wrap:anywhere;letter-spacing:normal;text-transform:none}
+ #abt-medical-demo table.mobile-records>tbody>tr>:first-child,#abt-medical-demo table.mobile-records>tbody>tr>:nth-child(2),#abt-medical-demo table.mobile-records>tbody>tr>:last-child{grid-column:1/-1}
+ #abt-medical-demo table.mobile-records>tbody>tr>:first-child{padding-bottom:9px!important;border-bottom:1px solid var(--line)!important}
+ #abt-medical-demo table.mobile-records>tbody>tr>:first-child strong{font-size:14px;line-height:1.4}
+ #abt-medical-demo table.mobile-records>tbody>tr>[data-mobile-label]::before{content:attr(data-mobile-label);font-size:11px;line-height:1.4;color:var(--muted);font-weight:500}
+ #abt-medical-demo table.mobile-records>tbody>tr>:first-child::before{display:none}
+ #abt-medical-demo table.mobile-records .money{white-space:normal;text-align:left;font-variant-numeric:tabular-nums}
+ #abt-medical-demo table.mobile-records td>.actions{margin:0;width:100%;display:flex;flex-wrap:wrap;gap:8px}
+ #abt-medical-demo table.mobile-records td:last-child button,#abt-medical-demo table.mobile-records td:last-child .download-link{min-height:44px;font-size:13px;flex:1;width:100%;justify-content:center;text-align:center;padding:9px 12px}
+ #abt-medical-demo table.mobile-records td:last-child .history-downloads{width:100%;display:flex;flex-wrap:wrap;gap:7px}
+ #abt-medical-demo table.mobile-records .badge{max-width:100%;font-size:11px;line-height:1.5}
+ #abt-medical-demo .formgrid,#abt-medical-demo .detailgrid,#abt-medical-demo .facts,#abt-medical-demo .finance-workspace{grid-template-columns:minmax(0,1fr);gap:14px}
+ #abt-medical-demo .formgrid label{min-width:0;font-size:13px}
+ #abt-medical-demo input,#abt-medical-demo select,#abt-medical-demo textarea,#abt-medical-demo label input,#abt-medical-demo label select,#abt-medical-demo label textarea{font-size:16px;min-height:44px}
+ #abt-medical-demo input[type=checkbox]{min-height:20px;width:20px;height:20px;flex:0 0 auto}
+ #abt-medical-demo input[type=file]{max-width:100%;padding:9px;font-size:13px}
+ #abt-medical-demo .date-control{min-width:0;max-width:100%;width:100%}
+ #abt-medical-demo .date-control input{min-width:0;max-width:100%;width:100%}
+ #abt-medical-demo .item{grid-template-columns:minmax(0,1fr) 44px;gap:8px;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+ #abt-medical-demo .item>:first-child{grid-column:1/-1}
+ #abt-medical-demo .item>button{min-height:44px;min-width:44px}
+ #abt-medical-demo .actions{gap:8px}
+ #abt-medical-demo .actions>button,#abt-medical-demo .actions>a{min-height:44px;font-size:13px}
+ #abt-medical-demo form>.actions{display:flex;align-items:stretch}
+ #abt-medical-demo form>.actions>button{flex:1 1 100%}
+ #abt-medical-demo .receipt,#abt-medical-demo .review{padding:13px;min-width:0}
+ #abt-medical-demo .app-dialog{width:100vw!important;max-width:100vw;height:100dvh;max-height:100dvh;inset:0;margin:0;border-radius:0;overscroll-behavior:contain}
+ #abt-medical-demo .app-dialog #claim-detail,#abt-medical-demo .app-dialog #claim-form-section,#abt-medical-demo .employee-editor{padding:0 14px 24px}
+ #abt-medical-demo .employee-id-editor{padding:18px 14px}
+ #abt-medical-demo .app-dialog #claim-detail>.boxhead,#abt-medical-demo .app-dialog #claim-form-section>.boxhead{padding:14px 0;margin-bottom:14px}
+ #abt-medical-demo .claim-header-main{display:block}
+ #abt-medical-demo .claim-header-main .actions{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+ #abt-medical-demo .claim-header-main .badge{flex:1;max-width:none}
+ #abt-medical-demo .claim-header-main button,#abt-medical-demo .boxhead>button{min-height:44px;font-size:13px}
+ #abt-medical-demo .claim-detail-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
+ #abt-medical-demo .claim-detail-tabs button{font-size:12px;padding:10px 4px;min-height:44px;min-width:0;white-space:normal}
+ #abt-medical-demo .claim-header-main h3,#abt-medical-demo .boxhead h3{overflow-wrap:anywhere}
+ #abt-medical-demo .claim-progress-panel{grid-template-columns:1fr;gap:10px;padding:12px}
+ #abt-medical-demo .claim-balance-grid{grid-template-columns:1fr;gap:8px}
+ #abt-medical-demo .claim-other-actions summary,#abt-medical-demo .employee-profile-details>summary{min-height:40px;display:flex;align-items:center;font-size:12px}
+ #abt-medical-demo .claim-detail-panel table:not(.mobile-records){table-layout:fixed}
+ #abt-medical-demo .claim-detail-panel table:not(.mobile-records) th,#abt-medical-demo .claim-detail-panel table:not(.mobile-records) td{overflow-wrap:anywhere;font-size:13px;padding:9px 6px;white-space:normal}
+ #abt-medical-demo .sop-table tbody th{width:42%}
+ #abt-medical-demo .employee-editor-controls{width:100%;display:flex;gap:7px}
+ #abt-medical-demo .employee-editor-controls button{flex:1;min-height:44px;white-space:normal;font-size:12px}
+ #abt-medical-demo .attachment-list{grid-template-columns:1fr}
+ #abt-medical-demo .attachment-card{flex-wrap:wrap;min-width:0}
+ #abt-medical-demo .attachment-card strong{overflow-wrap:anywhere}
+ #abt-medical-demo .attachment-preview{scroll-margin-top:210px;padding:10px;min-width:0}
+ #abt-medical-demo .attachment-preview-head>.actions{width:100%;gap:6px}
+ #abt-medical-demo .attachment-preview-head button,#abt-medical-demo .attachment-preview-head a{min-height:44px;font-size:12px;padding:8px}
+ #abt-medical-demo .attachment-preview-stage{max-height:55dvh;max-width:100%}
+ #abt-medical-demo dialog.finance-ready-dialog{width:calc(100vw - 12px);max-height:calc(100dvh - 12px);padding:12px;aspect-ratio:auto;border-radius:10px}
+ #abt-medical-demo .mobile-preview-close{display:block;width:100%;min-height:44px;margin-bottom:12px}
+ #abt-medical-demo .finance-ready-dialog .claim-finance-grid{grid-template-columns:1fr;gap:12px}
+ #abt-medical-demo .finance-ready-reference{align-items:flex-start;flex-direction:column;gap:5px;margin-bottom:12px}
+ #abt-medical-demo .finance-ready-reference strong{max-width:100%}
+ #abt-medical-demo .finance-ready-reference span{text-align:left;overflow-wrap:anywhere}
+ #abt-medical-demo .finance-ready-dialog .sop-table td,#abt-medical-demo .finance-ready-dialog .sop-table tbody th{font-size:13px;padding:9px 8px}
+ #abt-medical-demo .finance-ready-dialog .finance-claim-summary .facts{grid-template-columns:1fr}
+ #abt-medical-demo .note,#abt-medical-demo .help,#abt-medical-demo .banner,#abt-medical-demo .error{overflow-wrap:anywhere}
+}
+@media screen and (max-width:359px){
+ #abt-medical-demo .brand-logo,#abt-medical-demo .hr-monitor-top .brand-logo{width:74px;height:30px}
+ #abt-medical-demo .brand strong,#abt-medical-demo .hr-monitor-top .brand strong{font-size:12px}
+ #abt-medical-demo .brand .small{font-size:9px}
+ #abt-medical-demo .mobile-menu-toggle{padding:7px 8px;gap:5px}
+ #abt-medical-demo table.mobile-records>tbody>tr{padding:12px;gap:10px}
+ #abt-medical-demo .employee-balance-item>strong{font-size:17px}
+ #abt-medical-demo .employee-balance-available>strong{font-size:19px}
+}
+@media screen and (max-width:767px){
+ /* Override compact desktop control sizes only on phones. */
+ #abt-medical-demo button:not(.metric),#abt-medical-demo .download-link{min-height:44px!important}
+ #abt-medical-demo .download-link{display:inline-flex;align-items:center;justify-content:center}
+ #abt-medical-demo input:not([type=checkbox]):not([type=hidden]),#abt-medical-demo select,#abt-medical-demo textarea{font-size:16px!important;min-height:44px!important}
+ #abt-medical-demo .attachment-card a,#abt-medical-demo .attachment-preview-head a{display:inline-flex;align-items:center;min-height:44px}
+}
+
+/* Claim queues: inline status counts and one compact record per row. */
+#abt-medical-demo .hr-status-row{display:flex;align-items:stretch;flex-wrap:wrap;gap:0 16px;border-bottom:1px solid var(--line)}
+#abt-medical-demo .hr-status-row .status-filter-item{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 0;border:0;border-bottom:2px solid transparent;border-radius:0;background:transparent;color:var(--muted);font-size:12px;text-align:left;line-height:1.4}
+#abt-medical-demo .hr-status-row .status-filter-item.summary-selected{border-bottom-color:var(--brand);color:var(--ink)}
+#abt-medical-demo .hr-status-row .status-filter-item:hover{color:var(--brand)}
+#abt-medical-demo .status-filter-count{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:23px;padding:0 6px;border-radius:5px;background:var(--panel);color:var(--ink);font-size:12px;font-weight:600;font-variant-numeric:tabular-nums}
+#abt-medical-demo .summary-selected .status-filter-count{background:var(--soft);color:var(--brand)}
+#abt-medical-demo .claim-list-compact,#abt-medical-demo .hr-monitoring .history-table.claim-list-compact,#abt-medical-demo .employee-history .history-table.claim-list-compact{min-width:600px;width:100%;table-layout:fixed}
+#abt-medical-demo .claim-list-compact th:nth-child(1){width:30%}
+#abt-medical-demo .claim-list-compact th:nth-child(2){width:19%}
+#abt-medical-demo .claim-list-compact th:nth-child(3){width:16%}
+#abt-medical-demo .claim-list-compact th:nth-child(4){width:25%}
+#abt-medical-demo .claim-list-compact th:nth-child(5){width:10%}
+#abt-medical-demo .hr-monitoring .claim-list-compact td,#abt-medical-demo .employee-history .claim-list-compact td{padding:10px 8px;vertical-align:middle;font-size:12px}
+#abt-medical-demo .claim-list-compact .claim-person-cell>strong{font-weight:600;font-size:13px;line-height:1.4;overflow-wrap:anywhere}
+#abt-medical-demo .claim-list-compact .claim-person-reference{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:11px;line-height:1.4;margin-top:3px;overflow-wrap:anywhere}
+#abt-medical-demo .claim-list-compact .claim-pr-number{display:block;margin-top:3px;overflow-wrap:anywhere}
+#abt-medical-demo .claim-list-compact .claim-amount-cell strong{font-size:13px;font-weight:600}
+#abt-medical-demo .claim-list-compact .claim-amount-cell .small{font-size:10px;display:block;white-space:normal}
+#abt-medical-demo .claim-list-compact .claim-status-cell>.small{display:block;font-size:10px;margin-top:3px}
+#abt-medical-demo .claim-list-compact .claim-status-cell .badge{font-size:10px;line-height:1.4;max-width:100%;padding:3px 7px;border-radius:5px}
+#abt-medical-demo .claim-inline-warning{display:block;font-size:10px;font-weight:600;color:var(--warn);line-height:1.4;margin-top:4px}
+#abt-medical-demo .claim-list-compact .claim-progress-inline{margin-top:3px;font-size:10px;line-height:1.3}
+#abt-medical-demo .claim-list-compact .stage-age[data-wait-days='']{display:none}
+#abt-medical-demo .claim-list-compact .claim-action-cell{text-align:right}
+#abt-medical-demo .claim-empty{padding:22px 8px;display:grid;gap:10px;justify-items:center}
+#abt-medical-demo .claim-empty button{font-size:12px;min-height:38px}
+@media screen and (max-width:767px){
+ #abt-medical-demo .hr-status-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px;border-bottom:0}
+ #abt-medical-demo .hr-status-row .status-filter-item{min-width:0;justify-content:space-between;font-size:12px;border-bottom:1px solid var(--line);padding:9px 0;gap:8px}
+ #abt-medical-demo .hr-status-row .status-filter-item.summary-selected{border-bottom:2px solid var(--brand)}
+ #abt-medical-demo .hr-status-row .status-filter-item:last-child:nth-child(odd){grid-column:1/-1}
+ #abt-medical-demo .hr-status-row .status-filter-item>span{min-width:0;overflow-wrap:anywhere}
+ #abt-medical-demo .hr-status-row .status-filter-count{flex-shrink:0}
+ #abt-medical-demo table.mobile-records.claim-list-compact{min-width:0!important;table-layout:auto}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody{display:block}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:'identity amount' 'reference reference' 'status action';gap:5px 12px;padding:13px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent!important}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr:last-child{border-bottom:0}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>:first-child,#abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>:nth-child(2),#abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>:last-child{grid-column:auto;grid-row:auto;border:0!important;padding:0!important}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>[data-mobile-label]::before{display:none}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>.claim-person-cell{grid-area:identity;gap:0}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>.claim-person-cell strong{font-size:13px;line-height:1.4}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>.claim-person-cell .small{font-size:11px;line-height:1.4;margin-top:3px}
+ #abt-medical-demo .claim-list-compact .claim-person-reference{-webkit-line-clamp:1}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>.claim-reference-cell{grid-area:reference;display:flex;flex-direction:row;align-items:center;flex-wrap:wrap;gap:3px 9px;font-size:11px!important;color:var(--muted);margin:2px 0 5px}
+ #abt-medical-demo .claim-list-compact .claim-pr-number{display:inline;margin:0;font-size:10px}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>.claim-amount-cell{grid-area:amount;align-items:flex-end;text-align:right;max-width:43vw}
+ #abt-medical-demo .claim-list-compact .claim-amount-cell strong{font-size:13px;line-height:1.4}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>.claim-status-cell{grid-area:status;display:flex;flex-direction:row;align-items:center;flex-wrap:wrap;gap:4px 8px;align-self:center}
+ #abt-medical-demo .claim-list-compact .claim-status-cell .badge{font-size:10px;line-height:1.4;padding:3px 6px}
+ #abt-medical-demo .claim-list-compact .claim-status-cell .claim-progress-inline{margin:0;font-size:10px;flex:0 0 auto}
+ #abt-medical-demo .claim-list-compact .claim-status-cell .claim-inline-warning{flex-basis:100%;margin-top:0;font-size:10px}
+ #abt-medical-demo .claim-list-compact .claim-status-cell>.small{font-size:10px;margin:0}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>.claim-action-cell{grid-area:action;align-self:center;align-items:flex-end;justify-content:center}
+ #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>.claim-action-cell button{width:auto;min-width:65px;min-height:44px;padding:8px 10px;font-size:12px}
+ #abt-medical-demo .claim-empty{text-align:center;line-height:1.6}
+}

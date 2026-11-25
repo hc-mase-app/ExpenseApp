@@ -1,0 +1,10 @@
+{
+  "checks": 17,
+  "legacyClaimsUnchanged": 172,
+  "legacyProfilesUnchanged": 50,
+  "medicalEmployerUnchanged": true,
+  "expensePayers": [
+    "HJI",
+    "ABT"
+  ]
+}
