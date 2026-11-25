@@ -1,0 +1,28 @@
+{
+  "eligibility": {
+    "pkwtMonths": 0,
+    "pkwttRequiresProbation": true
+  },
+  "outpatient": {
+    "staffBase": 0,
+    "staffSenior": 0,
+    "supervisorBase": 0,
+    "supervisorSenior": 0,
+    "seniorityMonths": 0,
+    "reset": "calendar-year",
+    "prorata": false
+  },
+  "optics": {
+    "staff": 0,
+    "supervisor": 0,
+    "minServiceMonths": 0,
+    "cycleMonths": 12,
+    "oncePerCycle": true,
+    "employeeOnly": true
+  },
+  "family": {
+    "maleServiceMonths": 0,
+    "maxChildren": 0,
+    "sharedAllowance": true
+  }
+}

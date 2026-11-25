@@ -4,6 +4,8 @@ export const runtime='nodejs';export const dynamic='force-dynamic';
 const headers={'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'};
 const json=(data,status=200,more={})=>Response.json(data,{status,headers:{...headers,...more}});
 async function handle(req,{params}){try{const {path:p}=await params;const url=new URL(req.url);if(req.method!=='GET'){const origin=req.headers.get('origin');if(origin&&new URL(origin).host!==(req.headers.get('host')||url.host))return json({error:'Asal permintaan tidak sesuai.'},403)}
+ if(p[0]==='branding'&&p.length===1&&req.method==='GET'){const b=store.publicBranding();return json({companyName:b.companyName,productName:b.productName,logoVersion:b.logoVersion});}
+ if(p[0]==='branding'&&p[1]==='logo'&&p.length===2&&req.method==='GET'){const logo=store.customerLogo();return logo?new Response(new Uint8Array(logo.bytes),{headers:{...headers,'Content-Type':logo.type}}):new Response('<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96"><rect width="96" height="96" rx="20" fill="#007a3d"/><text x="48" y="59" text-anchor="middle" fill="white" font-size="32" font-family="sans-serif">B&amp;E</text></svg>',{headers:{...headers,'Content-Type':'image/svg+xml'}});}
  if(p[0]==='test-mode'&&p[1]==='info'&&p.length===2&&req.method==='GET')return json(store.runtimeEnvironment());
  if(p[0]==='test-mode'&&p[1]==='enter'&&p.length===2&&req.method==='POST'){const token=store.enterTest((await req.json()).ticket);return json({ok:true},200,{'Set-Cookie':cookieHeader(token)});}
  if(p[0]==='login'&&req.method==='POST'){const b=await req.json(),token=store.login(b.username,b.password);return json({ok:true},200,{'Set-Cookie':cookieHeader(token)})}
@@ -11,6 +13,8 @@ async function handle(req,{params}){try{const {path:p}=await params;const url=ne
  if(p[0]==='logout'&&req.method==='POST'){store.logout(req);return json({ok:true},200,{'Set-Cookie':cookieHeader('')})}
  const u=store.userFrom(req);
  if(process.env.ABT_MAINTENANCE==='1'&&req.method!=='GET')return json({error:'Aplikasi sedang dalam pemeliharaan. Silakan coba kembali setelah diberitahukan HR.'},503);
+ if(p[0]==='branding'&&p.length===1&&req.method==='POST')return json(await store.updateBranding(u,await req.formData()));
+ if(p[0]==='product'&&p[1]==='initial-policy'&&p.length===2&&req.method==='POST')return json(store.configureInitialPolicy(u,await req.json()));
  if(p[0]==='test-mode'&&p[1]==='start'&&p.length===2&&req.method==='POST')return json(await store.openTestMode(u));
  if(p[0]==='test-mode'&&p[1]==='reset'&&p.length===2&&req.method==='POST')return json(store.resetTests(u,await req.json()));
  if(p[0]==='claims'&&p[2]==='archive'&&p.length===3&&req.method==='POST')return json(store.archiveClaim(u,p[1],await req.json()));

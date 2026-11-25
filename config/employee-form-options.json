@@ -1,119 +1,16 @@
 {
   "source": {
-    "file": "Rekap 50 Karyawan.xlsx",
-    "sheet": "Master Karyawan",
-    "sha256": "d463e33e31d50d0f34b59257cc77e83cde1bc4996afccfbf49e2180e58974dee",
-    "columns": {
-      "departments": "Department",
-      "positions": "Posisi",
-      "levels": "Level Jabatan",
-      "contracts": "Status Kepegawaian"
-    },
-    "companySource": "Existing reviewed company/Finance mapping; company is absent from Rekap 50 Karyawan.xlsx"
+    "description": "Customer-defined master data"
   },
-  "departments": [
-    "Billing & AR",
-    "Business Development",
-    "FAT",
-    "HRGA",
-    "IT",
-    "Legal Compliance & HSE",
-    "Management",
-    "Operations",
-    "Recruitment Services",
-    "Tender & Procurement"
-  ],
-  "positionsByDepartment": {
-    "Billing & AR": [
-      "AR Associate",
-      "Billing Associate"
-    ],
-    "Business Development": [
-      "Business Development Executive"
-    ],
-    "FAT": [
-      "Accounting Supervisor",
-      "FAT Manager",
-      "Finance Supervisor",
-      "Tax Accounting Associate",
-      "Tax Supervisor"
-    ],
-    "HRGA": [
-      "GA Associate",
-      "GA Officer",
-      "HRGA Manager",
-      "IT Support",
-      "Keepers",
-      "Maintenance",
-      "Maintenance Officer",
-      "Messanger",
-      "Security"
-    ],
-    "IT": [
-      "DevOps",
-      "Software Engineer"
-    ],
-    "Legal Compliance & HSE": [
-      "Formalities Associate",
-      "Formalities Supervisor",
-      "HSE Associate",
-      "Legal & Compliance Manager"
-    ],
-    "Management": [
-      "Chairman",
-      "Head of Finance & Support",
-      "Head of Operations",
-      "Managing Director"
-    ],
-    "Operations": [
-      "HR Project Admin",
-      "HR Project Associate",
-      "HR Project Coordinator",
-      "HR Project Supervisor"
-    ],
-    "Recruitment Services": [
-      "Recruiter",
-      "Talent Sourcer"
-    ],
-    "Tender & Procurement": [
-      "Procurement Associate",
-      "Tender Coordinator"
-    ]
-  },
+  "departments": [],
+  "positionsByDepartment": {},
   "levels": [
-    "Associate",
-    "BOD",
-    "Junior Supervisor",
-    "Manager",
-    "Officer",
-    "Senior Supervisor",
-    "Support"
+    "Staff",
+    "Supervisor"
   ],
   "contracts": [
     "PKWT",
     "PKWTT"
   ],
-  "companies": [
-    {
-      "name": "PT. ABHITECH MATRA INDAH",
-      "code": "ABT",
-      "codePending": false
-    },
-    {
-      "name": "PT. ABHITRANS MATRA INDAH",
-      "code": "ABT",
-      "codePending": false,
-      "confirmation": "Yan confirms Finance code ABT"
-    },
-    {
-      "name": "PT. HULU JASA INDAH",
-      "code": "HJI",
-      "codePending": false
-    },
-    {
-      "name": "PT. ORYX SERVICES",
-      "code": "ORX",
-      "codePending": false
-    }
-  ]
+  "companies": []
 }

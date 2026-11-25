@@ -1,37 +1,28 @@
-> Versi terbaru: pilihan PT penanggung biaya khusus Expense. Lihat docs/07_REVISI_PT_EXPENSE.md.
+# Benefits & Expenses — Product v0.1
 
-# Benefits & Expenses - paket serah terima IT
+Versi produk terpisah untuk satu pelanggan per instalasi. Nama grup/aplikasi dan logo dapat diatur tanpa mengubah kode. Satu pelanggan dapat mengelola beberapa perusahaan/PT di Data Master, termasuk PT penanggung biaya Expense.
 
-Versi paket: 19 November 2026. Bahasa panduan: Indonesia.
+## Isi paket
 
-## Mulai dari sini
+- Kode aplikasi Next.js, API internal, Dockerfile dan contoh reverse proxy.
+- Instalasi baru dengan satu akun HR/admin yang ditentukan saat setup; tanpa data pelanggan lama, klaim, lampiran atau password karyawan.
+- Pengaturan identitas/logo PNG/JPEG, batas hari klaim, aktivasi aturan awal, kriteria plafon per level dan tanggal efektif.
+- Alur klaim, pemeriksaan HR, Payment Request, penanda pengiriman Finance, pembayaran dan unduhan tetap tersedia.
+- Panduan instalasi, API, pemeliharaan dan hasil pemeriksaan.
 
-1. Baca `docs/01_PEMASANGAN_IT.md` untuk pemasangan pada server dan HTTPS.
-2. Pulihkan `trial.sqlite` dari **paket data terbatas yang terpisah**. Tidak ada database karyawan di ZIP aplikasi ini.
-3. Cocokkan `snapshot-manifest.json` dan `reconciliation.json` sebelum membuka akses pengguna.
-4. Jalankan penerimaan pada `docs/04_UJI_DAN_SERAH_TERIMA.md`.
-5. Jika laptop masih menerima pengajuan setelah waktu snapshot, lakukan backup final/cutover sesuai `docs/03_CUTOVER_DAN_BACKUP.md`.
+## Mulai
 
-## Yang dipertahankan
+Gunakan Node.js 24.22.3 atau Node 24 LTS yang kompatibel dan pnpm 11.25.0. Baca [INSTALL.md](docs/INSTALL.md) sebelum menjalankan server. Jalankan dari folder hasil ekstraksi, bukan dari dalam ZIP.
 
-Alur pengajuan karyawan, pemeriksaan HR, persetujuan/penolakan/pelengkapan, Payment Request, pencatatan pengiriman Finance dan pembayaran, data master, kriteria plafon, riwayat, nomor, PDF/Excel, tampilan desktop dan mobile mengikuti versi aplikasi laptop yang disetujui. Email ke HR/Finance dan transfer bank tetap dilakukan di luar aplikasi.
+    pnpm install --frozen-lockfile
+    pnpm run build
+    pnpm run test:product
 
-Pengajuan memuat Menunggu Pemeriksaan HR, Perlu Dilengkapi, dan Belum Dikirim ke Finance. Riwayat memuat Menunggu Pembayaran, Dibayar, Ditolak, Dibatalkan, dan Semua Riwayat. Riwayat impor tidak dianggap bukti pembayaran baru. Revisi yang perlu dikirim ulang masuk filter Belum Dikirim ke Finance.
+Atur .env dari .env.example. Database harus berada di luar folder kode. Buat pelanggan dengan scripts/init-customer.mjs sebelum pnpm start. Setelah masuk, buka Pengaturan → Identitas & Aturan Awal, aktifkan aturan yang telah disetujui pelanggan, lalu lengkapi Data Master dan Data Karyawan.
 
-## Kebutuhan platform
+## Batas versi ini
 
-- Node.js **24 LTS**, diuji pada **24.22.3**, dan pnpm **11.25.0**. Jangan langsung mengganti ke Node 26.
-- Satu instance aplikasi utama dengan penyimpanan SQLite yang persisten pada disk lokal server.
-- Domain/hostname perusahaan dan sertifikat HTTPS. Contoh `example.com` dalam paket wajib diganti oleh IT.
-- Reverse proxy, pembatasan akses ke data/backup, serta jadwal backup.
-- Gunakan VM/server/container dengan volume persisten. Paket ini tidak memakai database terkelola dan tidak cocok dipasang sebagai fungsi serverless dengan disk sementara.
+Ini model instalasi terpisah per pelanggan, bukan layanan SaaS bersama dengan pendaftaran publik, billing, atau langganan otomatis. Antarmuka berbahasa Indonesia, mata uang rupiah dan waktu Asia/Jakarta. Rawat jalan memakai tahun kalender tanpa prorata; kacamata satu klaim per siklus dan khusus karyawan; dukungan keluarga mengikuti model plafon bersama. Besaran/masa kerja dapat diatur; model kebijakan lain memerlukan pengembangan. Finance menerima laporan di luar aplikasi; aplikasi tidak melakukan transfer bank otomatis.
 
-## Dokumen
+Internal variable names ABT_* dipertahankan untuk kompatibilitas konfigurasi; bukan identitas pelanggan yang tampil. Jangan memakai paket ini untuk menimpa instalasi operasional lama. Produk baru ini tidak menyediakan migrasi otomatis database versi sebelumnya.
 
-- `docs/01_PEMASANGAN_IT.md`: Docker Compose, Node/Windows, domain, HTTPS dan Mode Uji.
-- `docs/02_ARSITEKTUR_DAN_DATA.md`: komponen, cakupan data, akun dan perubahan versi server.
-- `docs/03_CUTOVER_DAN_BACKUP.md`: snapshot terbaru, backup/pemulihan dan pembaruan.
-- `docs/04_UJI_DAN_SERAH_TERIMA.md`: daftar uji dan batas verifikasi.
-- `docs/HASIL_VALIDASI.json`: hasil pemeriksaan paket yang dilakukan saat persiapan.
-
-Database menyimpan akun dengan salt/hash password yang sudah ada. Password pengguna tidak direset oleh paket. Daftar plaintext password awal tidak dimasukkan ke ZIP aplikasi atau dibuat ulang sebagai password terbaru.

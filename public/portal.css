@@ -224,7 +224,7 @@ html,body{background:#14191f}
 #abt-medical-demo .progress-disclaimer{grid-column:1/-1;border-top:1px solid var(--line);padding-top:9px;margin:0;font-size:11px;color:var(--muted)}
 @media(max-width:600px){#abt-medical-demo .claim-progress-panel{grid-template-columns:1fr;padding:12px;gap:12px}#abt-medical-demo .stage-detail-age{font-size:16px}}
 
-/* Original Abhitech artwork; proportional display on header and sign-in. */
+/* Customer logo; proportional display on header and sign-in. */
 #abt-medical-demo .brand{max-width:100%;min-width:0}
 #abt-medical-demo .brand>div{min-width:0}
 #abt-medical-demo .brand-logo{display:block;flex:0 0 auto;width:154px;height:54px;object-fit:contain;background:#fff;border-radius:6px;padding:4px}

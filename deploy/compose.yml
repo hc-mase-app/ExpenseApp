@@ -1,7 +1,7 @@
-name: abt-benefits
+name: ${ABT_INSTANCE_ID:?Set a unique customer instance ID}
 services:
   app:
-    image: abt-benefits:2026.11.19
+    image: benefits-expenses-product:0.1.0
     build:
       context: ..
       dockerfile: Dockerfile
@@ -13,10 +13,10 @@ services:
       PORT: '3100'
       ABT_BIND_HOST: 0.0.0.0
     ports:
-      - '127.0.0.1:3100:3100'
+      - '127.0.0.1:${APP_PORT:-3100}:3100'
     volumes:
-      - main_data:/var/lib/abt-benefits/data
-      - test_data:/var/lib/abt-benefits/data-test
+      - main_data:/var/lib/benefits-expenses/data
+      - test_data:/var/lib/benefits-expenses/data-test
       - backups:/backups
     healthcheck:
       test: ['CMD','node','-e',"fetch('http://127.0.0.1:3100/api/test-mode/info').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
@@ -27,7 +27,7 @@ services:
     security_opt:
       - no-new-privileges:true
   test:
-    image: abt-benefits:2026.11.19
+    image: benefits-expenses-product:0.1.0
     profiles: [test]
     restart: unless-stopped
     init: true
@@ -37,9 +37,9 @@ services:
       PORT: '3101'
       ABT_BIND_HOST: 0.0.0.0
     ports:
-      - '127.0.0.1:3101:3101'
+      - '127.0.0.1:${TEST_PORT:-3101}:3101'
     volumes:
-      - test_data:/var/lib/abt-benefits/data-test
+      - test_data:/var/lib/benefits-expenses/data-test
     healthcheck:
       test: ['CMD','node','-e',"fetch('http://127.0.0.1:3101/api/test-mode/info').then(r=>r.json()).then(d=>process.exit(d.testMode?0:1)).catch(()=>process.exit(1))"]
       interval: 30s

@@ -22,7 +22,7 @@ COPY --from=build --chown=node:node /app/lib ./lib
 COPY --from=build --chown=node:node /app/config ./config
 COPY --from=build --chown=node:node /app/public ./public
 COPY --from=build --chown=node:node /app/scripts ./scripts
-RUN mkdir -p /var/lib/abt-benefits/data /var/lib/abt-benefits/data-test /backups /app/.next/cache && chown -R node:node /var/lib/abt-benefits /backups /app/.next/cache
+RUN mkdir -p /var/lib/benefits-expenses/data /var/lib/benefits-expenses/data-test /backups /app/.next/cache && chown -R node:node /var/lib/benefits-expenses /backups /app/.next/cache
 USER node
 EXPOSE 3100 3101
 CMD ["node","scripts/serve.mjs"]

@@ -1,5 +1,5 @@
 {
-  "name": "abt-benefits-expenses",
+  "name": "benefits-expenses-product",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,14 +10,15 @@
     "db:verify": "node scripts/verify.mjs",
     "db:restore": "node scripts/restore.mjs",
     "test:prepare": "node scripts/prepare-test.mjs",
-    "test:deployment": "node --test tests/deployment.test.mjs"
+    "customer:init": "node scripts/init-customer.mjs",
+    "test:product": "node --test tests/product.test.mjs"
   },
   "dependencies": {
     "next": "16.4.6",
     "react": "19.3.1",
     "react-dom": "19.3.1"
   },
-  "version": "2026.11.19",
+  "version": "0.1.0",
   "packageManager": "pnpm@11.25.0",
   "engines": {
     "node": ">=24.22.3 <25"
