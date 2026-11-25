@@ -685,3 +685,17 @@ html,body{background:#14191f}
  #abt-medical-demo table.mobile-records.claim-list-compact>tbody>tr>.claim-action-cell button{width:auto;min-width:65px;min-height:44px;padding:8px 10px;font-size:12px}
  #abt-medical-demo .claim-empty{text-align:center;line-height:1.6}
 }
+
+/* Searchable employee picker; retains the original acting-employee workflow. */
+#abt-medical-demo .acting-picker{width:100%;min-width:0}
+#abt-medical-demo #hr-acting-search{width:100%;margin:8px 0;padding:10px 12px;font-size:13px;box-sizing:border-box}
+#abt-medical-demo .acting-picker-options{max-height:min(300px,45dvh);overflow-y:auto;overscroll-behavior:contain;border:1px solid var(--line);border-radius:6px;scrollbar-width:thin}
+#abt-medical-demo .acting-picker-options button{display:flex;flex-direction:column;align-items:flex-start;gap:3px;width:100%;min-height:48px;margin:0;padding:10px 12px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:var(--panel);color:var(--ink);text-align:left;white-space:normal;overflow-wrap:anywhere;font-size:13px;cursor:pointer}
+#abt-medical-demo .acting-picker-options button:last-of-type{border-bottom:0}
+#abt-medical-demo .acting-picker-options button:hover,#abt-medical-demo .acting-picker-options button:focus-visible,#abt-medical-demo .acting-picker-options .is-current{background:var(--soft)}
+#abt-medical-demo .acting-picker-options button:focus-visible{outline:2px solid var(--accent,#007a3d);outline-offset:-2px}
+#abt-medical-demo .acting-picker-option strong{font-size:13px;font-weight:600}
+#abt-medical-demo .acting-picker-option span{font-size:11px;color:var(--muted)}
+#abt-medical-demo .acting-picker-options .acting-picker-reset{color:var(--accent,#007a3d);font-weight:600;min-height:38px}
+#abt-medical-demo .acting-picker-empty{margin:0;padding:16px 12px;font-size:13px;color:var(--muted)}
+#abt-medical-demo .acting-picker-options [hidden]{display:none!important}
